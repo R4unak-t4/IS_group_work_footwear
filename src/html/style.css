@@ -1,0 +1,567 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: #f8f8f8;
+    color: #333;
+    overflow-x: hidden;
+}
+
+.container {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 0 20px;
+    position: relative;
+    min-height: 100vh;
+}
+
+/* Header Styles */
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 0;
+    position: relative;
+    z-index: 10;
+}
+
+.menu-icon {
+    cursor: pointer;
+    width: 30px;
+    display: none; /* Hide on large screens */
+    visibility: hidden; /* Hide completely on large screens */
+}
+
+.placeholder {
+    width: 30px; /* Same width as menu-icon for balance */
+    visibility: hidden;
+}
+
+.bar {
+    height: 3px;
+    background-color: #000;
+    margin: 5px 0;
+    border-radius: 3px;
+}
+
+nav {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    width: auto;
+}
+
+nav ul {
+    display: flex;
+    list-style: none;
+    gap: 60px;
+    justify-content: center;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: #000;
+    font-size: 18px;
+    font-weight: 500;
+    transition: color 0.3s ease;
+}
+
+nav ul li a:hover, nav ul li a.active {
+    color: #333;
+}
+
+/* Main Content Styles */
+main {
+    position: relative;
+    padding: 20px 0;
+    height: calc(100vh - 100px);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+/* Carousel Styles - Updated to match design */
+.carousel-container {
+    position: relative;
+    height: 400px;
+    width: 100%;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.carousel {
+    position: relative;
+    width: 60%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: visible;
+}
+
+.shoe-item {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: all 0.6s ease;
+}
+
+.shoe-img {
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain;
+    display: block;
+}
+
+/* Thumbnail Styles */
+.thumbnail-container {
+    display: flex;
+    align-items: center;
+    width: 20%;
+    height: 100%;
+    position: relative;
+}
+
+.left-thumbnail {
+    justify-content: flex-start;
+}
+
+.right-thumbnail {
+    justify-content: flex-end;
+}
+
+.thumbnail {
+    width: 150px;
+    height: 150px;
+    background-color: #e9e9e9;
+    border-radius: 10px;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    filter: blur(1px);
+    opacity: 0.8;
+    transition: all 0.3s ease;
+}
+
+.thumbnail:hover {
+    filter: blur(0);
+    opacity: 1;
+}
+
+.thumbnail-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* Arrow Styles */
+.slide-arrow {
+    background-color: #f0f0f0;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    z-index: 10;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+    margin: 0 10px;
+}
+
+.slide-arrow:hover {
+    transform: scale(1.1);
+    background-color: #e0e0e0;
+}
+
+.collection-info {
+    position: absolute;
+    bottom: 40px;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    padding: 0 40px;
+}
+
+.collection-title {
+    font-size: 4rem;
+    font-weight: 600;
+    color: #e0e0e0;
+    text-transform: uppercase;
+}
+
+.collection-number {
+    font-size: 10rem;
+    font-weight: 700;
+    color: #f0f0f0;
+    line-height: 0.8;
+}
+
+/* Responsive Styles */
+@media (max-width: 992px) {
+    .collection-title {
+        font-size: 3rem;
+    }
+
+    .collection-number {
+        font-size: 7rem;
+    }
+
+    nav ul {
+        gap: 30px;
+    }
+
+    .thumbnail {
+        width: 120px;
+        height: 120px;
+    }
+}
+
+@media (max-width: 768px) {
+    .menu-icon {
+        display: block; /* Show on smaller screens */
+        visibility: visible;
+    }
+
+    nav {
+        position: static;
+        transform: none;
+    }
+
+    nav ul {
+        gap: 20px;
+    }
+
+    .collection-title {
+        font-size: 2.5rem;
+    }
+
+    .collection-number {
+        font-size: 5rem;
+    }
+
+    .thumbnail {
+        width: 100px;
+        height: 100px;
+    }
+}
+
+@media (max-width: 576px) {
+    nav {
+        display: none;
+    }
+
+    .collection-title {
+        font-size: 2rem;
+    }
+
+    .collection-number {
+        font-size: 4rem;
+    }
+
+    .thumbnail {
+        width: 80px;
+        height: 80px;
+    }
+
+    .carousel-container {
+        flex-direction: column;
+        height: auto;
+    }
+
+    .thumbnail-container {
+        width: 100%;
+        justify-content: center;
+        margin: 10px 0;
+    }
+
+    .carousel {
+        width: 100%;
+        order: -1;
+    }
+}
+/* Add these styles to your existing style.css file */
+
+/* Carousel Container Adjustments */
+.carousel-container {
+    position: relative;
+    height: 400px;
+    width: 100%;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+/* Carousel Enhancements */
+.carousel {
+    position: relative;
+    width: 50%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: visible;
+    perspective: 1000px;
+}
+
+/* Thumbnail Containers */
+.thumbnail-container {
+    display: flex;
+    align-items: center;
+    height: 100%;
+    position: relative;
+    cursor: pointer;
+}
+
+.left-thumbnail, .right-thumbnail {
+    width: 15%;
+    z-index: 2;
+    justify-content: center;
+}
+
+.far-left-thumbnail, .far-right-thumbnail {
+    width: 10%;
+    z-index: 1;
+    justify-content: center;
+}
+
+/* Thumbnail Image Styling */
+.thumbnail-img {
+    width: 100px;
+    height: 100px;
+    object-fit: cover;
+    border-radius: 10px;
+    filter: blur(1px);
+    opacity: 0.8;
+    transition: all 0.3s ease, transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    cursor: pointer;
+}
+
+.far-left-thumbnail .thumbnail-img,
+.far-right-thumbnail .thumbnail-img {
+    width: 80px;
+    height: 80px;
+    opacity: 0.6;
+    filter: blur(2px);
+}
+
+.thumbnail-container:hover .thumbnail-img {
+    filter: blur(0);
+    opacity: 1;
+    transform: scale(1.1);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+/* Shoe Item Styling */
+.shoe-item {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: transform 0.3s ease;
+}
+
+.shoe-item.center {
+    z-index: 5;
+    transform: scale(1.4);
+}
+
+.shoe-item.left, .shoe-item.right {
+    z-index: 3;
+    opacity: 0.7;
+    filter: blur(1px);
+}
+
+.shoe-item.far-left, .shoe-item.far-right {
+    z-index: 1;
+    opacity: 0.4;
+    filter: blur(2px);
+}
+
+.shoe-item.left {
+    transform: translateX(-80%) scale(0.8);
+}
+
+.shoe-item.right {
+    transform: translateX(80%) scale(0.8);
+}
+
+.shoe-item.far-left {
+    transform: translateX(-150%) scale(0.6);
+}
+
+.shoe-item.far-right {
+    transform: translateX(150%) scale(0.6);
+}
+
+/* Arrow Styling */
+.slide-arrow {
+    background-color: #f0f0f0;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    z-index: 10;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+}
+
+.slide-arrow:hover {
+    animation: pulse 1s infinite alternate;
+}
+
+@keyframes pulse {
+    0% {
+        transform: scale(1);
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    }
+    100% {
+        transform: scale(1.1);
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+    }
+}
+
+/* Collection Info */
+.collection-info {
+    position: absolute;
+    bottom: 40px;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    padding: 0 40px;
+}
+
+.collection-title, .collection-number {
+    transition: opacity 0.3s ease;
+}
+
+.collection-title {
+    font-size: 4rem;
+    font-weight: 600;
+    color: #e0e0e0;
+    text-transform: uppercase;
+}
+
+.collection-number {
+    font-size: 10rem;
+    font-weight: 700;
+    color: #f0f0f0;
+    line-height: 0.8;
+}
+
+/* Responsive Styles */
+@media (max-width: 1200px) {
+    .far-left-thumbnail, .far-right-thumbnail {
+        display: none;
+    }
+
+    .carousel {
+        width: 60%;
+    }
+
+    .left-thumbnail, .right-thumbnail {
+        width: 20%;
+    }
+}
+
+@media (max-width: 992px) {
+    .collection-title {
+        font-size: 3rem;
+    }
+
+    .collection-number {
+        font-size: 7rem;
+    }
+
+    nav ul {
+        gap: 30px;
+    }
+
+    .thumbnail-img {
+        width: 80px;
+        height: 80px;
+    }
+}
+
+@media (max-width: 768px) {
+    .menu-icon {
+        display: block;
+        visibility: visible;
+    }
+
+    nav {
+        position: static;
+        transform: none;
+    }
+
+    nav ul {
+        gap: 20px;
+    }
+
+    .collection-title {
+        font-size: 2.5rem;
+    }
+
+    .collection-number {
+        font-size: 5rem;
+    }
+
+    .thumbnail-img {
+        width: 60px;
+        height: 60px;
+    }
+}
+
+@media (max-width: 576px) {
+    nav {
+        display: none;
+    }
+
+    .collection-title {
+        font-size: 2rem;
+    }
+
+    .collection-number {
+        font-size: 4rem;
+    }
+
+    .thumbnail-img {
+        width: 50px;
+        height: 50px;
+    }
+
+    .carousel-container {
+        flex-direction: column;
+        height: auto;
+    }
+
+    .thumbnail-container {
+        width: 100%;
+        justify-content: center;
+        margin: 10px 0;
+    }
+
+    .carousel {
+        width: 100%;
+        order: -1;
+    }
+}
