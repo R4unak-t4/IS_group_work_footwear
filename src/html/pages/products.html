@@ -3,10 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Products - Leory Shoes</title>
-    <link rel="stylesheet" href="style.css">
+    <title>Leory - Products</title>
+    <link rel="stylesheet" href="../style.css">
+    <link rel="stylesheet" href="products.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 </head>
 <body>
 <div class="container">
@@ -21,112 +22,143 @@
         </div>
         <nav>
             <ul>
-                <li><a href="index.html">Home</a></li>
+                <li><a href="../index.html">Home</a></li>
                 <li><a href="#">Blog</a></li>
-                <li><a href="product.html" class="active">Product</a></li>
+                <li><a href="products.html" class="active">Product</a></li>
                 <li><a href="#">About Us</a></li>
-                <li><a href="#">Contact Us</a></li>
+                <li><a href="contact.html">Contact Us</a></li>
             </ul>
         </nav>
         <div class="placeholder"></div>
     </header>
 
-    <main>
-        <h1 class="page-title">Our Products</h1>
-
-        <div class="products-grid">
-            <!-- Product 1 -->
-            <div class="product-card" onclick="window.location.href='product-detail.html?id=1'">
-                <div class="product-image">
-                    <img src="images/shoe1.png" alt="White Nike Air Max Sneakers">
-                    <div class="product-badge">New</div>
-                </div>
-                <div class="product-info">
-                    <h3 class="product-name">Air Max Pulse</h3>
-                    <p class="product-category">Running Collection</p>
-                    <div class="product-price">
-                        <span class="current-price">$129.99</span>
-                        <span class="original-price">$159.99</span>
-                        <span class="discount-percentage">-19%</span>
+    <main class="product-main">
+        <div class="product-content">
+            <div class="product-grid">
+                <!-- Product 1 -->
+                <div class="product-card">
+                    <img src="../images/shoe1.png" alt="White Nike Air Max Sneakers">
+                    <div class="price-overlay">
+                        <span class="price">NRs 5,500</span>
                     </div>
+                    <div class="product-name">Air Max Pulse</div>
+                </div>
+
+                <!-- Product 2 -->
+                <div class="product-card">
+                    <img src="../images/shoe2.png" alt="Blue Athletic Shoes">
+                    <div class="price-overlay">
+                        <span class="price">NRs 6,200</span>
+                    </div>
+                    <div class="product-name">Ultra Boost 22</div>
+                </div>
+
+                <!-- Product 3 -->
+                <div class="product-card">
+                    <img src="../images/shoe3.png" alt="Colorful Patterned Shoes">
+                    <div class="price-overlay">
+                        <span class="price">NRs 4,800</span>
+                    </div>
+                    <div class="product-name">Fusion Flex</div>
+                </div>
+
+                <!-- Product 4 -->
+                <div class="product-card">
+                    <img src="../images/shoe4.png" alt="Running Shoes">
+                    <div class="price-overlay">
+                        <span class="price">NRs 5,900</span>
+                    </div>
+                    <div class="product-name">Zoom Velocity</div>
+                </div>
+
+                <!-- Product 5 -->
+                <div class="product-card">
+                    <img src="../images/shoe5.png" alt="Casual Shoes">
+                    <div class="price-overlay">
+                        <span class="price">NRs 4,500</span>
+                    </div>
+                    <div class="product-name">Cloud Walker</div>
+                </div>
+
+                <!-- Product 6 -->
+                <div class="product-card">
+                    <img src="../images/shoe6.png" alt="White Nike Air Max Sneakers">
+                    <div class="price-overlay">
+                        <span class="price">NRs 5,500</span>
+                    </div>
+                    <div class="product-name">Air Max Pulse</div>
                 </div>
             </div>
 
-            <!-- Product 2 -->
-            <div class="product-card" onclick="window.location.href='product-detail.html?id=2'">
-                <div class="product-image">
-                    <img src="images/shoe2.png" alt="Blue Athletic Shoes">
-                    <div class="product-badge">Trending</div>
+            <div class="product-info-section">
+                <div class="product-label">Our Products</div>
+                <h1 class="product-heading">Shoes from our heart</h1>
+                <h3 class="product-subheading">Find your perfect pair!</h3>
+                <p class="product-description">
+                    Our collection features premium quality shoes designed for comfort and style.
+                    Each pair is crafted with attention to detail and made from the finest materials
+                    to ensure durability and performance for every step you take.
+                </p>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <div class="footer-container">
+            <div class="footer-column footer-about">
+                <div class="footer-logo">
+                    <h2 class="logo-text">Leory</h2>
                 </div>
-                <div class="product-info">
-                    <h3 class="product-name">Ultra Boost 22</h3>
-                    <p class="product-category">Sport Collection</p>
-                    <div class="product-price">
-                        <span class="current-price">$179.99</span>
-                        <span class="original-price">$199.99</span>
-                        <span class="discount-percentage">-10%</span>
-                    </div>
+                <p>We provide high-quality footwear designed for comfort, style, and performance. Our mission is to help you find the perfect pair for every occasion.</p>
+                <div class="social-icons">
+                    <a href="#" class="social-icon"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#" class="social-icon"><i class="fab fa-instagram"></i></a>
                 </div>
             </div>
 
-            <!-- Product 3 -->
-            <div class="product-card" onclick="window.location.href='product-detail.html?id=3'">
-                <div class="product-image">
-                    <img src="images/shoe3.png" alt="Colorful Patterned Shoes">
-                </div>
-                <div class="product-info">
-                    <h3 class="product-name">Fusion Flex</h3>
-                    <p class="product-category">Designer Collection</p>
-                    <div class="product-price">
-                        <span class="current-price">$149.99</span>
-                        <span class="original-price">$189.99</span>
-                        <span class="discount-percentage">-21%</span>
-                    </div>
-                </div>
+            <div class="footer-column">
+                <h3>Quick Links</h3>
+                <ul>
+                    <li><a href="../index.html">Home</a></li>
+                    <li><a href="products.html">Shop</a></li>
+                    <li><a href="#">About Us</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                    <li><a href="#">Blog</a></li>
+                </ul>
             </div>
 
-            <!-- Product 4 -->
-            <div class="product-card" onclick="window.location.href='product-detail.html?id=4'">
-                <div class="product-image">
-                    <img src="images/shoe4.png" alt="Running Shoes">
-                    <div class="product-badge">Best Seller</div>
-                </div>
-                <div class="product-info">
-                    <h3 class="product-name">Zoom Velocity</h3>
-                    <p class="product-category">Athletic Collection</p>
-                    <div class="product-price">
-                        <span class="current-price">$139.99</span>
-                        <span class="original-price">$169.99</span>
-                        <span class="discount-percentage">-18%</span>
+            <div class="footer-column">
+                <h3>Contact Us</h3>
+                <div class="contact-info">
+                    <div class="contact-item">
+                        <span class="contact-icon"><i class="fas fa-map-marker-alt"></i></span>
+                        <span>123 Fashion Street, Kathmandu, Nepal</span>
                     </div>
-                </div>
-            </div>
-
-            <!-- Product 5 -->
-            <div class="product-card" onclick="window.location.href='product-detail.html?id=5'">
-                <div class="product-image">
-                    <img src="images/shoe5.png" alt="Casual Shoes">
-                </div>
-                <div class="product-info">
-                    <h3 class="product-name">Cloud Walker</h3>
-                    <p class="product-category">Casual Collection</p>
-                    <div class="product-price">
-                        <span class="current-price">$99.99</span>
-                        <span class="original-price">$129.99</span>
-                        <span class="discount-percentage">-23%</span>
+                    <div class="contact-item">
+                        <span class="contact-icon"><i class="fas fa-phone-alt"></i></span>
+                        <span>+977 1234 5678</span>
+                    </div>
+                    <div class="contact-item">
+                        <span class="contact-icon"><i class="fas fa-envelope"></i></span>
+                        <span>info@leory.com</span>
+                    </div>
+                    <div class="contact-item">
+                        <span class="contact-icon"><i class="fas fa-clock"></i></span>
+                        <span>Mon-Sat: 10:00 AM - 7:00 PM</span>
                     </div>
                 </div>
             </div>
         </div>
-    </main>
+
+        <div class="footer-bottom">
+            <p>&copy; 2023 Leory. All rights reserved.</p>
+        </div>
+    </footer>
 </div>
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
 <script>
     document.addEventListener('DOMContentLoaded', function() {
-        // Get GSAP from window
-        const gsap = window.gsap;
-
         // Logo gradient animation
         const logoText = document.querySelector('.logo-text');
         gsap.to(logoText, {
@@ -137,21 +169,23 @@
             ease: "sine.inOut"
         });
 
-        // Animate page title
-        gsap.from('.page-title', {
-            y: -30,
-            opacity: 0,
-            duration: 0.8,
-            ease: 'power3.out'
-        });
-
         // Animate product cards
         gsap.from('.product-card', {
-            y: 50,
+            y: 30,
+            opacity: 0,
+            duration: 0.6,
+            stagger: 0.1,
+            ease: 'power2.out'
+        });
+
+        // Animate product info
+        gsap.from('.product-info-section > *', {
+            x: 30,
             opacity: 0,
             duration: 0.8,
-            stagger: 0.2,
-            ease: 'power3.out'
+            stagger: 0.1,
+            delay: 0.3,
+            ease: 'power2.out'
         });
 
         // Add hover effects
@@ -179,3 +213,4 @@
 </script>
 </body>
 </html>
+
