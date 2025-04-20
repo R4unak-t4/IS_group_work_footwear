@@ -53,8 +53,8 @@ function updateText(index) {
 }
 
 function runCarousel() {
-    prev.style.display = (active == 0) ? 'none' : 'block';
-    next.style.display = (active == count - 1) ? 'none' : 'block';
+    prev.style.display = (active === 0) ? 'none' : 'block';
+    next.style.display = (active === count - 1) ? 'none' : 'block';
 
     let old_active = document.querySelector('.item.active');
     if(old_active) old_active.classList.remove('active');

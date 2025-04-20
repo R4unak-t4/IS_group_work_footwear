@@ -4,6 +4,25 @@ body {
     overflow-x: hidden;
 }
 
+a:link{
+    text-decoration: none;
+    color: black;
+}
+
+a:hover{
+    text-decoration: none;
+    color: dimgray;
+}
+
+a:visited{
+    text-decoration: none;
+    color: black;
+}
+a:active{
+    text-decoration: none;
+    color: black;
+}
+
 /* Loading Screen */
 .loading-screen {
     position: fixed;
@@ -77,9 +96,14 @@ header nav ul li:hover {
 }
 
 :root {
-    --radius: calc(100vw / 6);
+    --radius: 120px;
 }
 
+@media (min-width: 1200px) {
+    :root {
+        --radius: 260px; /* Large screens */
+    }
+}
 @keyframes gradientAnimation {
     0% {
         background-position: 0% 50%;
@@ -93,8 +117,10 @@ header nav ul li:hover {
 }
 
 .slider {
-    width: 100vw;
-    height: calc(100vh - 60px);
+    width: 100%;
+    height: 680px;
+    min-height: 400px;
+    max-height: 80%;
     overflow: hidden;
     position: relative;
     background: linear-gradient(-45deg, #f5f5f5, #e0e0e0, #d5d5d5, #f0f0f0);
@@ -144,7 +170,7 @@ header nav ul li:hover {
 }
 
 .slider .content div:nth-child(2) {
-    font-size: 5rem;
+    font-size: 80px;
     text-transform: uppercase;
     letter-spacing: 10px;
     font-weight: bold;
@@ -195,7 +221,7 @@ header nav ul li:hover {
     background-color: rgba(255, 255, 255, 0.3);
     border: 1px solid rgba(51, 51, 51, 0.3);
     color: #333;
-    font-size: x-large;
+    font-size: 20px; /* Changed from x-large to 20px */
     font-family: monospace;
     cursor: pointer;
     z-index: 15;
@@ -213,4 +239,24 @@ header nav ul li:hover {
 
 #next {
     right: 20px;
+}
+/* Footer Styles */
+footer {
+    background-color: #f5f5f5;
+    padding: 20px 0;
+    text-align: center;
+    margin-top: 50px;
+    border-top: 1px solid #eee;
+}
+
+.footer-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.footer-content p {
+    margin: 5px 0;
+    color: #666;
+    font-size: 14px;
 }
