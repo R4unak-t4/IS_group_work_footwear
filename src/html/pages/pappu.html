@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pappu Yadav - Portfolio</title>
+  <link rel="stylesheet" href="../style.css">
+  <link rel="stylesheet" href="about.css">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800&display=swap">
+  <style>
+    .colorful-portfolio {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 40px 20px;
+    }
+
+    .colorful-header {
+      position: relative;
+      height: 400px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+      margin-bottom: 60px;
+      border-radius: 10px;
+    }
+
+    .colorful-shapes {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      z-index: 1;
+    }
+
+    .shape {
+      position: absolute;
+      border-radius: 50%;
+    }
+
+    .shape-1 {
+      width: 300px;
+      height: 300px;
+      background-color: rgba(255, 88, 88, 0.7);
+      top: -100px;
+      left: -50px;
+    }
+
+    .shape-2 {
+      width: 400px;
+      height: 400px;
+      background-color: rgba(88, 103, 255, 0.5);
+      bottom: -150px;
+      right: -100px;
+    }
+
+    .shape-3 {
+      width: 200px;
+      height: 200px;
+      background-color: rgba(255, 222, 89, 0.6);
+      top: 50%;
+      left: 60%;
+    }
+
+    .colorful-intro {
+      position: relative;
+      z-index: 2;
+      text-align: center;
+    }
+
+    .colorful-intro h1 {
+      font-size: 5rem;
+      font-weight: 800;
+      margin-bottom: 10px;
+      background: linear-gradient(45deg, #ff5858, #5867ff, #ffde59);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    .colorful-intro h2 {
+      font-size: 1.5rem;
+      font-weight: 400;
+      color: #fff;
+      text-shadow: 0 2px 4px rgba(0,0,0,0.2);
+    }
+
+    .colorful-content {
+      display: flex;
+      gap: 40px;
+      margin-bottom: 60px;
+    }
+
+    .colorful-image {
+      flex: 0 0 300px;
+      border-radius: 10px;
+      overflow: hidden;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    }
+
+    .colorful-image img {
+      width: 100%;
+      height: auto;
+      display: block;
+    }
+
+    .colorful-about {
+      flex: 1;
+    }
+
+    .colorful-about h2 {
+      font-size: 2.5rem;
+      margin-bottom: 20px;
+      color: #5867ff;
+    }
+
+    .colorful-about p {
+      font-size: 1.1rem;
+      line-height: 1.8;
+      margin-bottom: 20px;
+    }
+
+    .skill-bubbles {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 15px;
+      margin-top: 30px;
+    }
+
+    .skill-bubble {
+      background: linear-gradient(45deg, #ff5858, #5867ff);
+      color: white;
+      padding: 10px 20px;
+      border-radius: 30px;
+      font-size: 0.9rem;
+      box-shadow: 0 5px 15px rgba(88, 103, 255, 0.3);
+      transition: transform 0.3s;
+    }
+
+    .skill-bubble:hover {
+      transform: scale(1.05);
+    }
+
+    .colorful-contact {
+      background-color: #f8f8f8;
+      padding: 30px;
+      border-radius: 10px;
+      text-align: center;
+    }
+
+    .colorful-contact p {
+      margin-bottom: 15px;
+    }
+
+    .colorful-social {
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+      margin-top: 20px;
+    }
+
+    .colorful-social a {
+      color: #333;
+      text-decoration: none;
+      transition: color 0.3s;
+    }
+
+    .colorful-social a:hover {
+      color: #5867ff;
+    }
+
+    @media (max-width: 768px) {
+      .colorful-content {
+        flex-direction: column;
+      }
+
+      .colorful-image {
+        flex: none;
+        margin: 0 auto 30px;
+        max-width: 300px;
+      }
+
+      .colorful-intro h1 {
+        font-size: 3.5rem;
+      }
+    }
+  </style>
+</head>
+<body>
+<!-- Loading Screen -->
+<div class="loading-screen">
+  <div class="loader"></div>
+</div>
+
+<header>
+  <div>TEAM PORTFOLIO</div>
+  <nav>
+    <ul>
+      <li><a href="index.html">HOME</a></li>
+      <li>BLOG</li>
+      <li>PRODUCTS</li>
+      <li>ABOUT US</li>
+      <li>CONTACT US</li>
+    </ul>
+  </nav>
+</header>
+
+<!-- Portfolio Navigation -->
+<div class="portfolio-nav">
+  <ul>
+    <li><a href="raunak.html">Raunak</a></li>
+    <li><a href="saiira.html">Saiira</a></li>
+    <li><a href="pappu.html" class="active">Pappu</a></li>
+    <li><a href="saarika.html">Saarika</a></li>
+  </ul>
+</div>
+
+<!-- Pappu's Portfolio -->
+<div class="colorful-portfolio">
+  <div class="colorful-header">
+    <div class="colorful-shapes">
+      <div class="shape shape-1"></div>
+      <div class="shape shape-2"></div>
+      <div class="shape shape-3"></div>
+    </div>
+    <div class="colorful-intro">
+      <h1>Pappu Yadav</h1>
+      <h2>Digital Illustrator & Motion Designer</h2>
+    </div>
+  </div>
+
+  <div class="colorful-content">
+    <div class="colorful-image">
+      <img src="pappu.jpg" alt="Pappu Yadav">
+    </div>
+
+    <div class="colorful-about">
+      <h2>Hello there!</h2>
+      <p>I'm Pappu, a digital artist specializing in vibrant illustrations and motion graphics. With a passion for color and movement, I create eye-catching visuals that bring ideas to life. My work ranges from character design to animated explainer videos, always with a touch of playfulness and energy.</p>
+
+      <p>I believe in the power of visual storytelling to communicate complex ideas in engaging ways. Whether it's creating a brand mascot or designing an animated sequence, I focus on creating work that connects with the audience and leaves a lasting impression.</p>
+
+      <h3>My Toolkit</h3>
+      <div class="skill-bubbles">
+        <div class="skill-bubble">Adobe Illustrator</div>
+        <div class="skill-bubble">After Effects</div>
+        <div class="skill-bubble">Procreate</div>
+        <div class="skill-bubble">Cinema 4D</div>
+        <div class="skill-bubble">Character Animation</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="colorful-contact">
+    <p>Let's create something amazing together!</p>
+    <p>pappu.yadav@example.com | +977 9854321098</p>
+    <div class="colorful-social">
+      <a href="#">Instagram</a>
+      <a href="#">LinkedIn</a>
+    </div>
+  </div>
+</div>
+
+<footer>
+  <div class="footer-content">
+    <p>&copy; 2025 Team Portfolio. All rights reserved.</p>
+    <p>Quality work for every project.</p>
+  </div>
+</footer>
+
+<script>
+  // Loading screen functionality
+  window.addEventListener('load', function() {
+    const loadingScreen = document.querySelector('.loading-screen');
+    loadingScreen.classList.add('fade-out');
+
+    setTimeout(function() {
+      loadingScreen.style.display = 'none';
+    }, 800);
+  });
+</script>
+</body>
+</html>

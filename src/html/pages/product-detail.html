@@ -1,0 +1,371 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Product Detail - Leroy</title>
+    <link rel="stylesheet" href="../style.css">
+    <link rel="stylesheet" href="product-detail.css">
+</head>
+<body>
+
+<!-- Loading Screen -->
+<div class="loading-screen">
+    <div class="loader"></div>
+</div>
+
+<header>
+    <div>LEROY</div>
+    <nav>
+        <ul>
+            <li>HOME</li>
+            <li>BLOG</li>
+            <li class="active">PRODUCTS</li>
+            <li>ABOUT US</li>
+            <li>CONTACT US</li>
+        </ul>
+    </nav>
+</header>
+
+<main class="product-container">
+    <div class="product-gallery">
+        <div class="main-image">
+            <img src="../images/shoe2.png" alt="Air Zoom Runner - Black/Red" id="main-product-image">
+        </div>
+    </div>
+
+    <div class="product-details">
+        <div class="product-category">Running Shoes</div>
+        <h1 class="product-title">Air Zoom Runner</h1>
+
+        <div class="product-rating">
+            <div class="stars">
+                <span class="star-count">4.7</span>
+                <div class="star-icons">
+                    <span class="star filled">★</span>
+                    <span class="star filled">★</span>
+                    <span class="star filled">★</span>
+                    <span class="star filled">★</span>
+                    <span class="star half-filled">★</span>
+                </div>
+                <span class="review-count">(128 Reviews)</span>
+            </div>
+        </div>
+
+        <div class="product-price">
+            <span class="original-price">RS.1800.00</span>
+            <span class="current-price">RS.1499.99</span>
+            <span class="discount-badge">-17%</span>
+        </div>
+
+        <div class="product-description">
+            <p>Experience unparalleled comfort and performance with the Air Zoom Runner. Designed for serious runners who demand the best, these shoes feature our revolutionary air cushioning system and responsive foam for maximum energy return on every stride.</p>
+        </div>
+
+        <div class="color-options">
+            <h3>Colors</h3>
+            <div class="color-selector">
+                <div class="color-option active" style="background-color: #000;" data-color="Black/Red"></div>
+                <div class="color-option" style="background-color: #1a73e8;" data-color="Blue/White"></div>
+                <div class="color-option" style="background-color: #fff; border: 1px solid #ddd;" data-color="White/Gray"></div>
+                <div class="color-option" style="background-color: #d93025;" data-color="Red/Black"></div>
+            </div>
+            <span class="selected-color">Black/Red</span>
+        </div>
+
+        <div class="size-options">
+            <h3>Select Size</h3>
+            <div class="size-selector">
+                <div class="size-option">7</div>
+                <div class="size-option">7.5</div>
+                <div class="size-option">8</div>
+                <div class="size-option">8.5</div>
+                <div class="size-option">9</div>
+                <div class="size-option active">9.5</div>
+                <div class="size-option">10</div>
+                <div class="size-option">10.5</div>
+                <div class="size-option">11</div>
+                <div class="size-option">11.5</div>
+                <div class="size-option">12</div>
+            </div>
+            <a href="#" class="size-guide">Size Guide</a>
+        </div>
+
+        <div class="product-actions">
+            <div class="quantity-selector">
+                <button class="quantity-btn minus">-</button>
+                <input type="number" value="1" min="1" max="10" id="quantity">
+                <button class="quantity-btn plus">+</button>
+            </div>
+            <button class="add-to-cart-btn">Add to Cart</button>
+            <button class="wishlist-btn">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path></svg>
+            </button>
+        </div>
+
+        <div class="product-meta">
+            <div class="meta-item">
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"></path><path d="M12 5v14"></path></svg>
+                <span>Free shipping on orders over $100</span>
+            </div>
+            <div class="meta-item">
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path><polyline points="9 22 9 12 15 12 15 22"></polyline></svg>
+                <span>In stock, ready to ship</span>
+            </div>
+            <div class="meta-item">
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>
+                <span>Available in Kathmandu stores</span>
+            </div>
+        </div>
+    </div>
+</main>
+
+<section class="product-info-tabs">
+    <div class="tabs">
+        <button class="tab-btn active" data-tab="specifications">Specifications</button>
+        <button class="tab-btn" data-tab="features">Features</button>
+        <button class="tab-btn" data-tab="reviews">Reviews</button>
+    </div>
+
+    <div class="tab-content">
+        <div class="tab-pane active" id="specifications">
+            <h2>Product Specifications</h2>
+            <table class="specs-table">
+                <tr>
+                    <th>Material</th>
+                    <td>Engineered mesh upper with synthetic overlays</td>
+                </tr>
+                <tr>
+                    <th>Cushioning</th>
+                    <td>Zoom Air units in forefoot and heel</td>
+                </tr>
+                <tr>
+                    <th>Midsole</th>
+                    <td>Responsive foam with energy return technology</td>
+                </tr>
+                <tr>
+                    <th>Outsole</th>
+                    <td>Durable rubber with multi-directional traction pattern</td>
+                </tr>
+                <tr>
+                    <th>Weight</th>
+                    <td>9.8 oz (Men's size 9)</td>
+                </tr>
+                <tr>
+                    <th>Drop</th>
+                    <td>10mm (Heel-to-toe offset)</td>
+                </tr>
+                <tr>
+                    <th>Arch Support</th>
+                    <td>Neutral to moderate</td>
+                </tr>
+                <tr>
+                    <th>Best For</th>
+                    <td>Road running, training, everyday wear</td>
+                </tr>
+                <tr>
+                    <th>Style Code</th>
+                    <td>LR-AZ2023-BR</td>
+                </tr>
+            </table>
+        </div>
+
+        <div class="tab-pane" id="features">
+            <h2>Key Features</h2>
+            <ul class="features-list">
+                <li>
+                    <h3>Responsive Cushioning</h3>
+                    <p>Zoom Air units in the forefoot and heel provide responsive cushioning that returns energy with every step.</p>
+                </li>
+                <li>
+                    <h3>Breathable Upper</h3>
+                    <p>Engineered mesh upper enhances breathability and provides a secure, comfortable fit.</p>
+                </li>
+                <li>
+                    <h3>Durable Traction</h3>
+                    <p>Rubber outsole with multi-directional pattern delivers excellent traction on various surfaces.</p>
+                </li>
+                <li>
+                    <h3>Supportive Fit</h3>
+                    <p>Dynamic Fit system with Flywire cables integrates with the laces for a supportive, adaptive fit.</p>
+                </li>
+                <li>
+                    <h3>Lightweight Design</h3>
+                    <p>Strategically placed materials reduce weight without sacrificing durability or performance.</p>
+                </li>
+            </ul>
+        </div>
+
+        <div class="tab-pane" id="reviews">
+            <div class="reviews-header">
+                <h2>Customer Reviews</h2>
+                <div class="overall-rating">
+                    <div class="rating-number">4.7</div>
+                    <div class="rating-stars">
+                        <span class="star filled">★</span>
+                        <span class="star filled">★</span>
+                        <span class="star filled">★</span>
+                        <span class="star filled">★</span>
+                        <span class="star half-filled">★</span>
+                    </div>
+                    <div class="rating-count">Based on 128 reviews</div>
+                </div>
+                <button class="write-review-btn">Write a Review</button>
+            </div>
+
+            <div class="review-form-container" id="review-form">
+                <h3>Write Your Review</h3>
+                <form id="new-review-form">
+                    <div class="form-group">
+                        <label for="review-name">Your Name</label>
+                        <input type="text" id="review-name" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="review-email">Email</label>
+                        <input type="email" id="review-email" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label>Your Rating</label>
+                        <div class="rating-selector">
+                            <div class="star-selector">
+                                <span class="star" data-rating="1">★</span>
+                                <span class="star" data-rating="2">★</span>
+                                <span class="star" data-rating="3">★</span>
+                                <span class="star" data-rating="4">★</span>
+                                <span class="star" data-rating="5">★</span>
+                            </div>
+                            <span class="selected-rating">0/5</span>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="review-title">Review Title</label>
+                        <input type="text" id="review-title" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="review-content">Your Review</label>
+                        <textarea id="review-content" rows="5" required></textarea>
+                    </div>
+
+                    <div class="form-actions">
+                        <button type="button" class="cancel-review-btn">Cancel</button>
+                        <button type="submit" class="submit-review-btn">Submit Review</button>
+                    </div>
+                </form>
+            </div>
+
+            <div class="reviews-list">
+                <!-- Review 1 -->
+                <div class="review-item">
+                    <div class="review-header">
+                        <div class="reviewer-info">
+                            <div class="reviewer-name">Raunak</div>
+                            <div class="review-date">October 15, 2023</div>
+                        </div>
+                        <div class="review-rating">
+                            <span class="star filled">★</span>
+                            <span class="star filled">★</span>
+                            <span class="star filled">★</span>
+                            <span class="star filled">★</span>
+                            <span class="star filled">★</span>
+                            <span class="rating-value">5/5</span>
+                        </div>
+                    </div>
+                    <h4 class="review-title">Best running shoes I've ever owned</h4>
+                    <div class="review-content">
+                        <p>I've been running for over 10 years and these are by far the most comfortable and responsive shoes I've ever worn. The cushioning is perfect - not too soft, not too firm. I've put about 100 miles on them so far and they're holding up great. Highly recommend for both casual and serious runners.</p>
+                    </div>
+                </div>
+
+                <!-- Review 2 -->
+                <div class="review-item">
+                    <div class="review-header">
+                        <div class="reviewer-info">
+                            <div class="reviewer-name">Siara</div>
+                            <div class="review-date">September 28, 2023</div>
+                        </div>
+                        <div class="review-rating">
+                            <span class="star filled">★</span>
+                            <span class="star filled">★</span>
+                            <span class="star filled">★</span>
+                            <span class="star filled">★</span>
+                            <span class="star">★</span>
+                            <span class="rating-value">4/5</span>
+                        </div>
+                    </div>
+                    <h4 class="review-title">Great shoes, slightly narrow fit</h4>
+                    <div class="review-content">
+                        <p>These shoes are fantastic in terms of cushioning and support. The only reason I'm giving 4 stars instead of 5 is that they run a bit narrow in the toe box. I had to go up half a size to get a comfortable fit. Once I did that, they've been perfect for my daily 5k runs.</p>
+                    </div>
+                </div>
+
+                <!-- Review 3 -->
+                <div class="review-item">
+                    <div class="review-header">
+                        <div class="reviewer-info">
+                            <div class="reviewer-name">Saarika</div>
+                            <div class="review-date">September 10, 2023</div>
+                        </div>
+                        <div class="review-rating">
+                            <span class="star filled">★</span>
+                            <span class="star filled">★</span>
+                            <span class="star filled">★</span>
+                            <span class="star filled">★</span>
+                            <span class="star half-filled">★</span>
+                            <span class="rating-value">4.5/5</span>
+                        </div>
+                    </div>
+                    <h4 class="review-title">Excellent performance, stylish design</h4>
+                    <div class="review-content">
+                        <p>I bought these primarily for gym workouts but have found myself wearing them for casual outings too because they look so good. The cushioning is excellent and they provide good stability during lateral movements. The only minor issue is that the laces tend to come undone easily, but that's a small complaint for an otherwise excellent shoe.</p>
+                    </div>
+                </div>
+
+                <!-- Review 4 -->
+                <div class="review-item">
+                    <div class="review-header">
+                        <div class="reviewer-info">
+                            <div class="reviewer-name">Pappu</div>
+                            <div class="review-date">August 22, 2023</div>
+                        </div>
+                        <div class="review-rating">
+                            <span class="star filled">★</span>
+                            <span class="star filled">★</span>
+                            <span class="star filled">★</span>
+                            <span class="star filled">★</span>
+                            <span class="star filled">★</span>
+                            <span class="rating-value">5/5</span>
+                        </div>
+                    </div>
+                    <h4 class="review-title">Perfect for marathon training</h4>
+                    <div class="review-content">
+                        <p>I'm training for my first marathon and these shoes have been a game-changer. The cushioning reduces impact on my joints during long runs, and they're lightweight enough that I don't feel weighed down after 15+ miles. I've already recommended them to several friends in my running group.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<div class="review-success-message" id="review-success">
+    <div class="success-content">
+        <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path><polyline points="22 4 12 14.01 9 11.01"></polyline></svg>
+        <h2>Thank You!</h2>
+        <p>Your review has been submitted successfully. We appreciate your feedback!</p>
+        <button id="close-review-success">Close</button>
+    </div>
+</div>
+
+<footer>
+    <div class="footer-content">
+        <p>&copy; 2025 LEROY Footwear. All rights reserved.</p>
+        <p>Quality footwear for every occasion.</p>
+    </div>
+</footer>
+
+<script src="product-detail.js"></script>
+</body>
+</html>

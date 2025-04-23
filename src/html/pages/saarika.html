@@ -1,0 +1,439 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Saarika Budathoki - Portfolio</title>
+    <link rel="stylesheet" href="../style.css">
+    <link rel="stylesheet" href="about.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800&display=swap">
+    <style>
+        .modern-portfolio {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 40px 20px;
+        }
+
+        .profile-container {
+            display: flex;
+            align-items: center;
+            margin-bottom: 60px;
+            background-color: #f8f8f8;
+            border-radius: 10px;
+            overflow: hidden;
+        }
+
+        .profile-image {
+            flex: 0 0 40%;
+            height: 400px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .profile-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .profile-image::after {
+            content: "";
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 50px;
+            height: 100%;
+            background: linear-gradient(to right, transparent, #f8f8f8);
+        }
+
+        .profile-info {
+            flex: 1;
+            padding: 40px;
+        }
+
+        .profile-info h1 {
+            font-size: 3rem;
+            margin-bottom: 10px;
+            font-weight: 600;
+        }
+
+        .profile-info h2 {
+            font-size: 1.2rem;
+            color: #666;
+            margin-bottom: 20px;
+            font-weight: 400;
+        }
+
+        .profile-bio {
+            margin-bottom: 30px;
+            line-height: 1.8;
+            color: #444;
+        }
+
+        .profile-contact {
+            display: flex;
+            gap: 20px;
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            color: #555;
+            font-size: 0.9rem;
+        }
+
+        .contact-icon {
+            width: 20px;
+            height: 20px;
+            background-color: #333;
+            border-radius: 50%;
+        }
+
+        .section-title {
+            font-size: 2.2rem;
+            margin-bottom: 40px;
+            position: relative;
+            display: inline-block;
+        }
+
+        .section-title::after {
+            content: "";
+            position: absolute;
+            bottom: -15px;
+            left: 0;
+            width: 60px;
+            height: 3px;
+            background-color: #333;
+        }
+
+        .timeline {
+            position: relative;
+            margin: 60px 0;
+        }
+
+        .timeline::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 20px;
+            width: 2px;
+            height: 100%;
+            background-color: #e0e0e0;
+        }
+
+        .timeline-item {
+            position: relative;
+            padding-left: 60px;
+            margin-bottom: 50px;
+        }
+
+        .timeline-item:last-child {
+            margin-bottom: 0;
+        }
+
+        .timeline-dot {
+            position: absolute;
+            top: 5px;
+            left: 11px;
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+            background-color: #333;
+            z-index: 1;
+        }
+
+        .timeline-date {
+            font-size: 0.9rem;
+            color: #777;
+            margin-bottom: 10px;
+        }
+
+        .timeline-title {
+            font-size: 1.4rem;
+            margin-bottom: 5px;
+        }
+
+        .timeline-subtitle {
+            font-size: 1rem;
+            color: #666;
+            margin-bottom: 15px;
+        }
+
+        .timeline-content {
+            line-height: 1.8;
+            color: #555;
+        }
+
+        .skills-container {
+            margin: 60px 0;
+        }
+
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 30px;
+        }
+
+        .skill-card {
+            background-color: #f8f8f8;
+            padding: 30px;
+            border-radius: 10px;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .skill-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+        }
+
+        .skill-card h3 {
+            font-size: 1.2rem;
+            margin-bottom: 20px;
+            padding-bottom: 10px;
+            border-bottom: 1px solid #e0e0e0;
+        }
+
+        .skill-list {
+            list-style: none;
+            padding: 0;
+        }
+
+        .skill-list li {
+            margin-bottom: 10px;
+            padding-left: 20px;
+            position: relative;
+        }
+
+        .skill-list li::before {
+            content: "•";
+            position: absolute;
+            left: 0;
+            color: #333;
+        }
+
+        .footer-social {
+            margin-top: 60px;
+            text-align: center;
+            padding-top: 30px;
+            border-top: 1px solid #e0e0e0;
+        }
+
+        .social-links {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            margin-top: 20px;
+        }
+
+        .social-link {
+            color: #333;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+        .social-link:hover {
+            color: #666;
+        }
+
+        @media (max-width: 992px) {
+            .profile-container {
+                flex-direction: column;
+            }
+
+            .profile-image {
+                flex: none;
+                width: 100%;
+                height: 300px;
+            }
+
+            .profile-image::after {
+                display: none;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .skills-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .profile-info h1 {
+                font-size: 2.5rem;
+            }
+
+            .section-title {
+                font-size: 1.8rem;
+            }
+        }
+    </style>
+</head>
+<body>
+<!-- Loading Screen -->
+<div class="loading-screen">
+    <div class="loader"></div>
+</div>
+
+<header>
+    <div>TEAM PORTFOLIO</div>
+    <nav>
+        <ul>
+            <li><a href="index.html">HOME</a></li>
+            <li>BLOG</li>
+            <li>PRODUCTS</li>
+            <li>ABOUT US</li>
+            <li>CONTACT US</li>
+        </ul>
+    </nav>
+</header>
+
+<!-- Portfolio Navigation -->
+<div class="portfolio-nav">
+    <ul>
+        <li><a href="raunak.html">Raunak</a></li>
+        <li><a href="saiira.html">Saiira</a></li>
+        <li><a href="pappu.html">Pappu</a></li>
+        <li><a href="saarika.html" class="active">Saarika</a></li>
+    </ul>
+</div>
+
+<!-- Saarika's Portfolio -->
+<div class="modern-portfolio">
+    <div class="profile-container">
+        <div class="profile-image">
+            <img src="images/saarika.jpg" alt="Saarika Budathoki">
+        </div>
+
+        <div class="profile-info">
+            <h1>Saarika Budathoki</h1>
+            <h2>Web Developer & UX Engineer</h2>
+
+            <div class="profile-bio">
+                <p>I'm a web developer and UX engineer with a passion for creating accessible, performant, and beautiful digital experiences. With a background in computer science and human-computer interaction, I bridge the gap between design and development.</p>
+            </div>
+
+            <div class="profile-contact">
+                <div class="contact-item">
+                    <div class="contact-icon"></div>
+                    <span>saarika.budathoki@example.com</span>
+                </div>
+
+                <div class="contact-item">
+                    <div class="contact-icon"></div>
+                    <span>+977 9812345678</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <h2 class="section-title">Work Experience</h2>
+
+    <div class="timeline">
+        <div class="timeline-item">
+            <div class="timeline-dot"></div>
+            <div class="timeline-date">2022 - Present</div>
+            <h3 class="timeline-title">Senior UX Engineer</h3>
+            <h4 class="timeline-subtitle">TechFusion Nepal, Kathmandu</h4>
+            <div class="timeline-content">
+                <p>Lead the development of user-centered web applications with a focus on accessibility and performance. Collaborate with designers and product managers to create intuitive interfaces that meet business goals and user needs. Implement design systems that ensure consistency across multiple products.</p>
+            </div>
+        </div>
+
+        <div class="timeline-item">
+            <div class="timeline-dot"></div>
+            <div class="timeline-date">2020 - 2022</div>
+            <h3 class="timeline-title">Frontend Developer</h3>
+            <h4 class="timeline-subtitle">Digital Innovators, Kathmandu</h4>
+            <div class="timeline-content">
+                <p>Developed responsive web applications using React, Vue.js, and modern CSS frameworks. Worked closely with backend developers to integrate APIs and optimize data flow. Implemented automated testing and continuous integration workflows to improve code quality.</p>
+            </div>
+        </div>
+
+        <div class="timeline-item">
+            <div class="timeline-dot"></div>
+            <div class="timeline-date">2018 - 2020</div>
+            <h3 class="timeline-title">Web Developer</h3>
+            <h4 class="timeline-subtitle">CloudTech Solutions, Kathmandu</h4>
+            <div class="timeline-content">
+                <p>Built and maintained websites and web applications for clients across various industries. Focused on creating responsive designs that work across all devices and browsers. Collaborated with designers to implement pixel-perfect interfaces from design mockups.</p>
+            </div>
+        </div>
+    </div>
+
+    <h2 class="section-title">Technical Skills</h2>
+
+    <div class="skills-container">
+        <div class="skills-grid">
+            <div class="skill-card">
+                <h3>Frontend Development</h3>
+                <ul class="skill-list">
+                    <li>HTML5, CSS3, JavaScript (ES6+)</li>
+                    <li>React, Vue.js, Angular</li>
+                    <li>Responsive Design</li>
+                    <li>CSS Frameworks (Tailwind, Bootstrap)</li>
+                    <li>State Management (Redux, Vuex)</li>
+                </ul>
+            </div>
+
+            <div class="skill-card">
+                <h3>Backend Development</h3>
+                <ul class="skill-list">
+                    <li>Node.js, Express</li>
+                    <li>Python, Django</li>
+                    <li>RESTful APIs</li>
+                    <li>GraphQL</li>
+                    <li>Authentication & Authorization</li>
+                </ul>
+            </div>
+
+            <div class="skill-card">
+                <h3>Database & Cloud</h3>
+                <ul class="skill-list">
+                    <li>MongoDB, PostgreSQL</li>
+                    <li>Firebase</li>
+                    <li>AWS Services</li>
+                    <li>Serverless Architecture</li>
+                    <li>Docker, CI/CD</li>
+                </ul>
+            </div>
+
+            <div class="skill-card">
+                <h3>UX Engineering</h3>
+                <ul class="skill-list">
+                    <li>Usability Testing</li>
+                    <li>Accessibility (WCAG)</li>
+                    <li>Performance Optimization</li>
+                    <li>Design Systems</li>
+                    <li>Prototyping</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <div class="footer-social">
+        <div class="social-links">
+            <a href="#" class="social-link">LinkedIn</a>
+            <a href="#" class="social-link">Instagram</a>
+        </div>
+    </div>
+</div>
+
+<footer>
+    <div class="footer-content">
+        <p>&copy; 2025 Team Portfolio. All rights reserved.</p>
+        <p>Quality work for every project.</p>
+    </div>
+</footer>
+
+<script>
+    // Loading screen functionality
+    window.addEventListener('load', function() {
+        const loadingScreen = document.querySelector('.loading-screen');
+        loadingScreen.classList.add('fade-out');
+
+        setTimeout(function() {
+            loadingScreen.style.display = 'none';
+        }, 800);
+    });
+</script>
+</body>
+</html>

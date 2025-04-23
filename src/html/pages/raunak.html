@@ -1,0 +1,461 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Raunak Thapa Magar - Portfolio</title>
+  <link rel="stylesheet" href="../style.css">
+  <link rel="stylesheet" href="about.css">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800&display=swap">
+  <style>
+    /* Specific styles for Raunak's portfolio */
+    .dark-theme {
+      background-color: #121212;
+      color: #fff;
+    }
+
+    .portfolio-header {
+      position: relative;
+      height: 90vh;
+      overflow: hidden;
+    }
+
+    .video-background {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      z-index: 0;
+    }
+
+    .video-background video {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .video-overlay {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0, 0, 0, 0.7);
+      z-index: 1;
+    }
+
+    .header-content {
+      position: relative;
+      height: 100%;
+      max-width: 1400px;
+      margin: 0 auto;
+      padding: 0 20px;
+      z-index: 2;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .date-author {
+      position: absolute;
+      top: 40px;
+      right: 40px;
+      text-align: right;
+      font-size: 0.9rem;
+      letter-spacing: 1px;
+    }
+
+    .date,
+    .author {
+      display: block;
+      margin-bottom: 5px;
+    }
+
+    .title-container {
+      flex: 1;
+      padding-right: 40px;
+    }
+
+    .creative {
+      font-size: 3rem;
+      font-weight: 600;
+      margin-bottom: -10px;
+    }
+
+    .portfolio {
+      font-size: 8rem;
+      font-weight: 800;
+      line-height: 1;
+      letter-spacing: -2px;
+    }
+
+    .header-image {
+      flex: 1;
+      height: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: flex-end;
+    }
+
+    .header-image img {
+      max-width: 100%;
+      max-height: 80%;
+      object-fit: contain;
+      border-radius: 8px;
+    }
+
+    .portfolio-content {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 80px 20px;
+    }
+
+    .about-section,
+    .experience-section,
+    .skills-section {
+      margin-bottom: 80px;
+    }
+
+    .about-section h2,
+    .experience-section h2,
+    .skills-section h2 {
+      font-size: 2rem;
+      margin-bottom: 30px;
+      position: relative;
+    }
+
+    .about-section h2::after,
+    .experience-section h2::after,
+    .skills-section h2::after {
+      content: "";
+      position: absolute;
+      bottom: -10px;
+      left: 0;
+      width: 60px;
+      height: 3px;
+      background-color: #fff;
+    }
+
+    .about-section p {
+      font-size: 1.1rem;
+      max-width: 800px;
+      line-height: 1.8;
+    }
+
+    .experience-item {
+      display: flex;
+      margin-bottom: 40px;
+      gap: 40px;
+    }
+
+    .experience-year {
+      flex: 0 0 150px;
+      font-weight: 600;
+      font-size: 1.1rem;
+    }
+
+    .experience-details h3 {
+      font-size: 1.4rem;
+      margin-bottom: 5px;
+    }
+
+    .experience-details h4 {
+      font-size: 1rem;
+      font-weight: 500;
+      color: #aaa;
+      margin-bottom: 15px;
+    }
+
+    .experience-details p {
+      line-height: 1.8;
+    }
+
+    .skills-container {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 15px;
+    }
+
+    .skill {
+      background-color: rgba(255, 255, 255, 0.1);
+      padding: 10px 20px;
+      border-radius: 30px;
+      font-size: 0.9rem;
+      transition: background-color 0.3s;
+    }
+
+    .skill:hover {
+      background-color: rgba(255, 255, 255, 0.2);
+    }
+
+    .portfolio-footer {
+      background-color: #0a0a0a;
+      padding: 40px 20px;
+    }
+
+    .portfolio-footer .contact-info,
+    .portfolio-footer .social-links {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: flex;
+      justify-content: space-between;
+      padding: 20px 0;
+    }
+
+    .portfolio-footer .contact-info {
+      border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    }
+
+    .social-link {
+      position: relative;
+      padding-bottom: 5px;
+    }
+
+    .social-link::after {
+      content: "";
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 0;
+      height: 1px;
+      background-color: #fff;
+      transition: width 0.3s;
+    }
+
+    .social-link:hover::after {
+      width: 100%;
+    }
+
+    @media (max-width: 1200px) {
+      .creative {
+        font-size: 2.5rem;
+      }
+
+      .portfolio {
+        font-size: 6rem;
+      }
+    }
+
+    @media (max-width: 992px) {
+      .header-content {
+        flex-direction: column;
+        justify-content: center;
+      }
+
+      .title-container {
+        padding-right: 0;
+        text-align: center;
+        margin-bottom: 40px;
+      }
+
+      .header-image {
+        justify-content: center;
+      }
+    }
+
+    @media (max-width: 768px) {
+      .creative {
+        font-size: 2rem;
+      }
+
+      .portfolio {
+        font-size: 4rem;
+      }
+
+      .experience-item {
+        flex-direction: column;
+        gap: 10px;
+      }
+
+      .experience-year {
+        flex: none;
+      }
+    }
+  </style>
+</head>
+<body>
+<!-- Loading Screen -->
+<div class="loading-screen">
+  <div class="loader"></div>
+</div>
+
+<header>
+  <div>TEAM PORTFOLIO</div>
+  <nav>
+    <ul>
+      <li><a href="index.html">HOME</a></li>
+      <li>BLOG</li>
+      <li>PRODUCTS</li>
+      <li>ABOUT US</li>
+      <li>CONTACT US</li>
+    </ul>
+  </nav>
+</header>
+
+<!-- Portfolio Navigation -->
+<div class="portfolio-nav">
+  <ul>
+    <li><a href="raunak.html" class="active">Raunak</a></li>
+    <li><a href="saiira.html">Saiira</a></li>
+    <li><a href="pappu.html">Pappu</a></li>
+    <li><a href="saarika.html">Saarika</a></li>
+  </ul>
+</div>
+
+<!-- Raunak's Portfolio -->
+<section class="dark-theme">
+  <div class="portfolio-header">
+    <!-- Video Background -->
+    <div class="video-background">
+      <video autoplay loop muted playsinline>
+        <source src="creative-background.mp4" type="video/mp4">
+        <!-- Fallback image if video doesn't load -->
+        Your browser does not support the video tag.
+      </video>
+      <div class="video-overlay"></div>
+    </div>
+
+    <div class="header-content">
+      <div class="date-author">
+        <span class="date">DECEMBER / 2025</span>
+        <span class="author">RAUNAK THAPA MAGAR</span>
+      </div>
+      <div class="title-container">
+        <h1 class="creative">CREATIVE</h1>
+        <h1 class="portfolio">PORTFOLIO</h1>
+      </div>
+      <div class="header-image">
+        <img src="raunak.png" alt="Raunak Thapa Magar">
+      </div>
+    </div>
+  </div>
+
+  <div class="portfolio-content">
+    <div class="about-section">
+      <h2>About Me</h2>
+      <p>I'm a creative professional with expertise in graphic design, UI/UX, and digital marketing. With over 5 years of experience in the creative industry, I've helped brands establish their visual identity and create meaningful connections with their audience.</p>
+    </div>
+
+    <div class="experience-section">
+      <h2>Professional Experience</h2>
+
+      <div class="experience-item">
+        <div class="experience-year">2023 - Present</div>
+        <div class="experience-details">
+          <h3>Senior UI/UX Designer</h3>
+          <h4>TechNova Solutions, Kathmandu</h4>
+          <p>Lead a team of 5 designers to create intuitive user interfaces for enterprise applications. Implemented design systems that reduced design inconsistencies by 60% and improved development efficiency by 40%. Conducted user research and usability testing to optimize user flows and increase customer satisfaction scores by 25%.</p>
+        </div>
+      </div>
+
+      <div class="experience-item">
+        <div class="experience-year">2021 - 2023</div>
+        <div class="experience-details">
+          <h3>Digital Product Designer</h3>
+          <h4>CreativeMinds Agency, Pokhara</h4>
+          <p>Designed mobile applications and responsive websites for clients across e-commerce, healthcare, and education sectors. Created interactive prototypes and wireframes that improved client approval rates by 35%. Collaborated with development teams to ensure design implementation matched creative vision, reducing revision cycles by 50%.</p>
+        </div>
+      </div>
+
+      <div class="experience-item">
+        <div class="experience-year">2019 - 2021</div>
+        <div class="experience-details">
+          <h3>Graphic Designer</h3>
+          <h4>Himalayan Media Group, Kathmandu</h4>
+          <p>Developed visual content for print and digital campaigns for major national brands. Created brand identity packages including logos, style guides, and marketing materials for 15+ clients. Managed social media visual content that increased engagement by 78% across platforms.</p>
+        </div>
+      </div>
+
+      <div class="experience-item">
+        <div class="experience-year">2018 - 2019</div>
+        <div class="experience-details">
+          <h3>Junior Designer</h3>
+          <h4>DesignHub Nepal, Kathmandu</h4>
+          <p>Assisted senior designers with various projects including website designs, branding, and marketing materials. Learned industry-standard design tools and workflows. Contributed to a rebranding project that won a national design award.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="skills-section">
+      <h2>Skills</h2>
+      <div class="skills-container">
+        <div class="skill">UI/UX Design</div>
+        <div class="skill">Figma</div>
+        <div class="skill">Adobe Creative Suite</div>
+        <div class="skill">Prototyping</div>
+        <div class="skill">Wireframing</div>
+        <div class="skill">User Research</div>
+        <div class="skill">Design Systems</div>
+        <div class="skill">Responsive Design</div>
+        <div class="skill">HTML/CSS</div>
+        <div class="skill">Motion Graphics</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="portfolio-footer">
+    <div class="contact-info">
+      <p>raunak.thapa@example.com</p>
+      <p>+977 9812345678</p>
+    </div>
+    <div class="social-links">
+      <a href="#" class="social-link">LinkedIn</a>
+      <a href="#" class="social-link">GitHub</a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="footer-content">
+    <p>&copy; 2025 Team Portfolio. All rights reserved.</p>
+    <p>Quality work for every project.</p>
+  </div>
+</footer>
+
+<script>
+  // Loading screen functionality
+  window.addEventListener('load', function() {
+    const loadingScreen = document.querySelector('.loading-screen');
+    loadingScreen.classList.add('fade-out');
+
+    setTimeout(function() {
+      loadingScreen.style.display = 'none';
+    }, 800);
+  });
+
+  // Ensure video plays automatically
+  document.addEventListener('DOMContentLoaded', function() {
+    const video = document.querySelector('video');
+
+    // Force play if autoplay doesn't work
+    video.play().catch(function(error) {
+      console.log("Autoplay prevented:", error);
+
+      // Add a play button if autoplay is blocked
+      if (error.name === "NotAllowedError") {
+        const playButton = document.createElement('button');
+        playButton.textContent = "Play Video";
+        playButton.style.position = "absolute";
+        playButton.style.zIndex = "3";
+        playButton.style.top = "50%";
+        playButton.style.left = "50%";
+        playButton.style.transform = "translate(-50%, -50%)";
+        playButton.style.padding = "10px 20px";
+        playButton.style.backgroundColor = "#fff";
+        playButton.style.border = "none";
+        playButton.style.borderRadius = "4px";
+        playButton.style.cursor = "pointer";
+
+        playButton.addEventListener('click', function() {
+          video.play();
+          this.remove();
+        });
+
+        document.querySelector('.video-background').appendChild(playButton);
+      }
+    });
+  });
+</script>
+</body>
+</html>

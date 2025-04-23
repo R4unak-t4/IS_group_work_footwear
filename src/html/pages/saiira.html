@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Saiira Gurung - Portfolio</title>
+    <link rel="stylesheet" href="../style.css">
+    <link rel="stylesheet" href="about.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800&display=swap">
+    <style>
+        .minimal-portfolio {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 40px 20px;
+        }
+
+        .minimal-header {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+
+        .minimal-name {
+            font-size: 4rem;
+            font-weight: 300;
+            letter-spacing: -1px;
+            margin-bottom: 10px;
+        }
+
+        .minimal-title {
+            font-size: 1.2rem;
+            color: #777;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+        }
+
+        .experience-section {
+            margin-bottom: 60px;
+        }
+
+        .experience-section h2 {
+            font-size: 2rem;
+            margin-bottom: 30px;
+            position: relative;
+            display: inline-block;
+        }
+
+        .experience-section h2::after {
+            content: "";
+            position: absolute;
+            bottom: -10px;
+            left: 0;
+            width: 40px;
+            height: 2px;
+            background-color: #333;
+        }
+
+        .experience-item {
+            margin-bottom: 30px;
+            padding-bottom: 30px;
+            border-bottom: 1px solid #eee;
+        }
+
+        .experience-item:last-child {
+            border-bottom: none;
+        }
+
+        .experience-item h3 {
+            font-size: 1.4rem;
+            margin-bottom: 5px;
+        }
+
+        .experience-item h4 {
+            font-size: 1rem;
+            font-weight: 500;
+            color: #777;
+            margin-bottom: 15px;
+        }
+
+        .experience-item p {
+            line-height: 1.8;
+            color: #555;
+        }
+
+        .minimal-about {
+            background-color: #fff;
+            padding: 40px;
+            border-radius: 8px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+        }
+
+        .minimal-about-content {
+            max-width: 800px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .minimal-about-content h2 {
+            font-size: 2rem;
+            font-weight: 300;
+            margin-bottom: 30px;
+            position: relative;
+        }
+
+        .minimal-about-content h2::after {
+            content: "";
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 40px;
+            height: 1px;
+            background-color: #333;
+        }
+
+        .minimal-about-content p {
+            margin-bottom: 20px;
+            line-height: 1.8;
+            color: #555;
+        }
+
+        .minimal-contact {
+            margin-top: 50px;
+            padding-top: 30px;
+            border-top: 1px solid #eee;
+            font-size: 0.9rem;
+            color: #777;
+        }
+
+        .minimal-social {
+            margin-top: 10px;
+        }
+
+        .minimal-social a {
+            color: #333;
+            transition: color 0.3s;
+            margin: 0 10px;
+            text-decoration: none;
+        }
+
+        .minimal-social a:hover {
+            color: #999;
+        }
+
+        /* Profile Photo Styles */
+        .profile-photo-section {
+            margin: 60px 0;
+            display: flex;
+            justify-content: center;
+        }
+
+        .profile-photo-container {
+            position: relative;
+            width: 300px;
+            height: 300px;
+            border-radius: 50%;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        .profile-photo {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s;
+        }
+
+        .profile-photo:hover {
+            transform: scale(1.05);
+        }
+
+        .profile-photo-container:hover .change-photo-btn {
+            opacity: 1;
+        }
+    </style>
+</head>
+<body>
+<!-- Loading Screen -->
+<div class="loading-screen">
+    <div class="loader"></div>
+</div>
+
+<header>
+    <div>TEAM PORTFOLIO</div>
+    <nav>
+        <ul>
+            <li><a href="index.html">HOME</a></li>
+            <li>BLOG</li>
+            <li>PRODUCTS</li>
+            <li>ABOUT US</li>
+            <li>CONTACT US</li>
+        </ul>
+    </nav>
+</header>
+
+<!-- Portfolio Navigation -->
+<div class="portfolio-nav">
+    <ul>
+        <li><a href="raunak.html">Raunak</a></li>
+        <li><a href="saiira.html" class="active">Saiira</a></li>
+        <li><a href="pappu.html">Pappu</a></li>
+        <li><a href="saarika.html">Saarika</a></li>
+    </ul>
+</div>
+
+<!-- Saiira's Portfolio -->
+<div class="minimal-portfolio">
+    <div class="minimal-header">
+        <h1 class="minimal-name">Saiira Gurung</h1>
+        <p class="minimal-title">Photography & Visual Arts</p>
+    </div>
+
+    <!-- Profile Photo Section -->
+    <div class="profile-photo-section">
+        <div class="profile-photo-container">
+            <img src="saiira-profile.jpeg" alt="Saiira Gurung" class="profile-photo">
+        </div>
+    </div>
+
+    <div class="experience-section">
+        <h2>Professional Experience</h2>
+
+        <div class="experience-item">
+            <h3>Senior Photographer</h3>
+            <h4>Himalayan Visuals, Pokhara (2022 - Present)</h4>
+            <p>Lead photographer for commercial and editorial projects. Specialized in landscape and cultural photography for tourism campaigns. Managed a team of junior photographers and coordinated multi-day photo expeditions across Nepal.</p>
+        </div>
+
+        <div class="experience-item">
+            <h3>Visual Arts Instructor</h3>
+            <h4>Kathmandu Art Academy (2020 - 2022)</h4>
+            <p>Taught photography and visual composition to undergraduate students. Developed curriculum focused on digital photography techniques and traditional visual storytelling methods. Organized student exhibitions and field trips to cultural sites.</p>
+        </div>
+
+        <div class="experience-item">
+            <h3>Freelance Photographer</h3>
+            <h4>Self-employed (2018 - 2020)</h4>
+            <p>Worked with various publications and tourism agencies to document Nepal's landscapes and cultural heritage. Published photo essays in National Geographic Traveler and Asian Photography Magazine. Exhibited work in galleries in Kathmandu and Pokhara.</p>
+        </div>
+    </div>
+
+    <div class="minimal-about">
+        <div class="minimal-about-content">
+            <h2>About Me</h2>
+            <p>I am a visual storyteller based in Pokhara, Nepal. My work focuses on capturing the beauty of Nepali landscapes, culture, and people through photography and visual arts. With a background in fine arts and digital photography, I blend traditional techniques with modern approaches to create compelling visual narratives.</p>
+            <p>My photographs have been featured in national exhibitions and international publications, including National Geographic Traveler and Asian Photography Magazine.</p>
+
+            <div class="minimal-contact">
+                <p>saiira.gurung@example.com | +977 9876543210</p>
+                <div class="minimal-social">
+                    <a href="#">Instagram</a>
+                    <a href="#">LinkedIn</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<footer>
+    <div class="footer-content">
+        <p>&copy; 2025 Team Portfolio. All rights reserved.</p>
+        <p>Quality work for every project.</p>
+    </div>
+</footer>
+
+<script>
+    // Loading screen functionality
+    window.addEventListener('load', function() {
+        const loadingScreen = document.querySelector('.loading-screen');
+        loadingScreen.classList.add('fade-out');
+
+        setTimeout(function() {
+            loadingScreen.style.display = 'none';
+        }, 800);
+    });
+
+    // Change photo button functionality
+    document.querySelector('.change-photo-btn').addEventListener('click', function() {
+        alert('Photo change functionality would be implemented here.');
+        // In a real implementation, this would open a file picker dialog
+        // and handle the upload process
+    });
+</script>
+</body>
+</html>
