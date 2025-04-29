@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tech & Footwear Blog - Team Portfolio</title>
+  <link rel="stylesheet" href="../style.css">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800&display=swap">
+  <style>
+    /* Blog page specific styles */
+    .blog-container {
+      max-width: 1200px;
+      margin: 100px auto 50px;
+      padding: 0 20px;
+    }
+
+    .blog-header {
+      text-align: center;
+      margin-bottom: 60px;
+    }
+
+    .blog-title {
+      font-size: 3rem;
+      margin-bottom: 15px;
+      position: relative;
+      display: inline-block;
+    }
+
+    .blog-title::after {
+      content: "";
+      position: absolute;
+      bottom: -10px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 80px;
+      height: 3px;
+      background-color: #333;
+    }
+
+    .blog-subtitle {
+      font-size: 1.2rem;
+      color: #666;
+      max-width: 800px;
+      margin: 0 auto;
+    }
+
+    /* Modern Gallery Layout */
+    .blog-gallery {
+      display: grid;
+      grid-template-columns: repeat(12, 1fr);
+      grid-auto-rows: minmax(100px, auto);
+      gap: 20px;
+      margin-bottom: 60px;
+    }
+
+    .gallery-item {
+      background-color: #fff;
+      border-radius: 10px;
+      overflow: hidden;
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+      transition: transform 0.3s, box-shadow 0.3s;
+    }
+
+    .gallery-item:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+    }
+
+    .gallery-item.featured {
+      grid-column: span 12;
+      grid-row: span 2;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .gallery-item.wide {
+      grid-column: span 8;
+    }
+
+    .gallery-item.narrow {
+      grid-column: span 4;
+    }
+
+    .gallery-item.medium {
+      grid-column: span 6;
+    }
+
+    .gallery-image {
+      width: 100%;
+      height: 300px;
+      overflow: hidden;
+    }
+
+    .gallery-item.featured .gallery-image {
+      height: 500px;
+    }
+
+    .gallery-image img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.5s;
+    }
+
+    .gallery-item:hover .gallery-image img {
+      transform: scale(1.05);
+    }
+
+    .gallery-content {
+      padding: 30px;
+      flex: 1;
+    }
+
+    .gallery-content h2 {
+      font-size: 1.8rem;
+      margin-bottom: 20px;
+      color: #333;
+    }
+
+    .gallery-content h3 {
+      font-size: 1.4rem;
+      margin-bottom: 15px;
+      color: #333;
+    }
+
+    .gallery-content p {
+      margin-bottom: 20px;
+      line-height: 1.8;
+      color: #555;
+    }
+
+    .gallery-content blockquote {
+      border-left: 4px solid #333;
+      padding-left: 20px;
+      margin: 30px 0;
+      font-style: italic;
+      color: #666;
+    }
+
+    @media (max-width: 992px) {
+      .blog-gallery {
+        grid-template-columns: repeat(6, 1fr);
+      }
+
+      .gallery-item.featured,
+      .gallery-item.wide,
+      .gallery-item.medium {
+        grid-column: span 6;
+      }
+
+      .gallery-item.narrow {
+        grid-column: span 3;
+      }
+
+      .gallery-item.featured .gallery-image {
+        height: 400px;
+      }
+    }
+
+    @media (max-width: 768px) {
+      .blog-title {
+        font-size: 2.5rem;
+      }
+
+      .blog-gallery {
+        grid-template-columns: 1fr;
+      }
+
+      .gallery-item.featured,
+      .gallery-item.wide,
+      .gallery-item.medium,
+      .gallery-item.narrow {
+        grid-column: span 1;
+      }
+
+      .gallery-item.featured .gallery-image {
+        height: 300px;
+      }
+    }
+  </style>
+</head>
+<body>
+<!-- Loading Screen -->
+<div class="loading-screen">
+  <div class="loader"></div>
+</div>
+
+<header>
+  <div>LEROY</div>
+  <nav>
+    <ul>
+      <li><a href="../index.html">HOME</a></li>
+      <li><a href="blog.html">BLOG</a></li>
+      <li><a href="products.html">PRODUCTS</a></li>
+      <li><a href="about.html">ABOUT</a></li>
+      <li><a href="contact.html">CONTACT US</a></li>
+      <li><a href="research.html">RESEARCH</a></li>
+    </ul>
+  </nav>
+</header>
+
+<!-- Blog Content -->
+<div class="blog-container">
+  <div class="blog-header">
+    <h1 class="blog-title">Tech Revolution in Footwear</h1>
+    <p class="blog-subtitle">Exploring the cutting-edge technologies transforming the future of shoes</p>
+  </div>
+
+  <div class="blog-gallery">
+    <!-- Featured Article -->
+    <div class="gallery-item featured" style="border-top: 5px solid #333;">
+      <div class="gallery-image">
+        <img src="images/tech-footwear.jpg" alt="Technology in Footwear" style="filter: saturate(1.2);">
+      </div>
+      <div class="gallery-content">
+        <h2 style="color: #222; font-family: 'Montserrat', sans-serif; letter-spacing: -0.5px;">The Intersection of Technology and Footwear</h2>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus lacinia odio vitae vestibulum vestibulum. Cras porttitor metus vel lorem finibus convallis. Maecenas iaculis ultrices libero, non placerat ipsum accumsan non. Fusce tempor nunc ac magna iaculis, sit amet scelerisque magna auctor. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; Proin lacinia, nisi vel finibus interdum, quam lectus molestie est, et finibus quam nisi vel nunc.</p>
+
+        <p>Etiam consequat ultricies magna, a feugiat turpis euismod nec. Proin eleifend nisi et sapien molestie, a efficitur lorem vehicula. Ut sit amet erat arcu. Suspendisse potenti. Maecenas bibendum nisi sit amet blandit pulvinar. Mauris sit amet imperdiet metus, at hendrerit enim. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; Cras porttitor, felis at consequat suscipit, felis felis malesuada sem, a accumsan dolor mi non sem.</p>
+
+        <blockquote style="font-size: 1.1rem; color: #444;">
+          "The future of footwear isn't just about comfort and style—it's about creating intelligent products that adapt to our needs, track our performance, and connect to our digital lives."
+        </blockquote>
+      </div>
+    </div>
+
+    <!-- Smart Shoes Article -->
+    <div class="gallery-item wide">
+      <div class="gallery-image">
+        <img src="images/smart-shoes.jpg" alt="Smart Shoes">
+      </div>
+      <div class="gallery-content">
+        <h3 style="color: #222; font-family: 'Montserrat', sans-serif; letter-spacing: -0.5px;">Smart Shoes: The Next Wearable Revolution</h3>
+        <p>Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Ut ac magna sodales, bibendum est et, commodo tortor. Donec in facilisis nulla, non imperdiet libero. Praesent commodo sem a bibendum dignissim.</p>
+      </div>
+    </div>
+
+    <!-- Quick Stats -->
+    <div class="gallery-item narrow" style="background: linear-gradient(135deg, #f5f5f5, #e0e0e0);">
+      <div class="gallery-content">
+        <h3 style="color: #222; text-align: center; margin-bottom: 30px;">Tech Footwear Stats</h3>
+        <div style="text-align: center; margin-bottom: 20px;">
+          <div style="font-size: 3rem; font-weight: 700; color: #333; margin-bottom: 5px;">42%</div>
+          <p style="margin: 0; color: #666;">Growth in smart footwear market</p>
+        </div>
+        <div style="text-align: center; margin-bottom: 20px;">
+          <div style="font-size: 3rem; font-weight: 700; color: #333; margin-bottom: 5px;">2.8M</div>
+          <p style="margin: 0; color: #666;">Smart shoes sold in 2024</p>
+        </div>
+        <div style="text-align: center;">
+          <div style="font-size: 3rem; font-weight: 700; color: #333; margin-bottom: 5px;">$8.5B</div>
+          <p style="margin: 0; color: #666;">Market value by 2030</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- 3D Printing Article -->
+    <div class="gallery-item medium">
+      <div class="gallery-image">
+        <img src="images/3d-printing.jpg" alt="3D Printing in Footwear">
+      </div>
+      <div class="gallery-content">
+        <h3 style="color: #222; font-family: 'Montserrat', sans-serif; letter-spacing: -0.5px;">3D Printing: Custom Footwear for Everyone</h3>
+        <p>Fusce vehicula dolor arcu, sit amet blandit dolor mollis nec. Donec viverra eleifend lacus, vitae ullamcorper metus. Sed sollicitudin ipsum quis nunc sollicitudin ultrices. Donec euismod scelerisque ligula.</p>
+      </div>
+    </div>
+
+    <!-- Sustainable Materials Article -->
+    <div class="gallery-item medium">
+      <div class="gallery-image">
+        <img src="images/sustainable.jpg" alt="Sustainable Materials">
+      </div>
+      <div class="gallery-content">
+        <h3 style="color: #222; font-family: 'Montserrat', sans-serif; letter-spacing: -0.5px;">Sustainable Materials: Eco-Tech in Footwear</h3>
+        <p>Sed dignissim lacinia nunc. Curabitur tortor. Pellentesque nibh. Aenean quam. In scelerisque sem at dolor. Maecenas mattis. Sed convallis tristique sem. Proin ut ligula vel nunc egestas porttitor.</p>
+      </div>
+    </div>
+
+    <!-- Performance Tech Article -->
+    <div class="gallery-item wide" style="border-left: 5px solid #333;">
+      <div class="gallery-image">
+        <img src="images/performance-tech.jpg" alt="Performance Technology">
+      </div>
+      <div class="gallery-content">
+        <h3 style="color: #222; font-family: 'Montserrat', sans-serif; letter-spacing: -0.5px;">Performance Technology: Pushing Athletic Boundaries</h3>
+        <p>Quisque volutpat condimentum velit. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Nam nec ante. Sed lacinia, urna non tincidunt mattis, tortor neque adipiscing diam, a cursus ipsum ante quis turpis.</p>
+      </div>
+    </div>
+
+    <!-- Future Trends -->
+    <div class="gallery-item narrow" style="background-color: #333; color: white;">
+      <div class="gallery-content">
+        <h3 style="color: white; text-align: center; margin-bottom: 20px;">Future Trends</h3>
+        <ul style="list-style-type: none; padding: 0;">
+          <li style="padding: 10px 0; border-bottom: 1px solid rgba(255,255,255,0.1);">Self-lacing technology</li>
+          <li style="padding: 10px 0; border-bottom: 1px solid rgba(255,255,255,0.1);">Biometric feedback systems</li>
+          <li style="padding: 10px 0; border-bottom: 1px solid rgba(255,255,255,0.1);">AR integration for sizing</li>
+          <li style="padding: 10px 0; border-bottom: 1px solid rgba(255,255,255,0.1);">Energy-harvesting soles</li>
+          <li style="padding: 10px 0; border-bottom: 1px solid rgba(255,255,255,0.1);">Climate-adaptive materials</li>
+          <li style="padding: 10px 0;">Biodegradable components</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>
+
+<footer>
+  <div class="footer-content">
+    <p>&copy; 2025 Team Portfolio. All rights reserved.</p>
+    <p>Quality work for every project.</p>
+  </div>
+</footer>
+
+<script>
+  // Loading screen functionality
+  window.addEventListener('load', function() {
+    const loadingScreen = document.querySelector('.loading-screen');
+    loadingScreen.classList.add('fade-out');
+
+    setTimeout(function() {
+      loadingScreen.style.display = 'none';
+    }, 800);
+  });
+</script>
+</body>
+</html>

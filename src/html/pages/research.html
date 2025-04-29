@@ -1,0 +1,691 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>UI Research - Team Portfolio</title>
+    <link rel="stylesheet" href="../style.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800&display=swap">
+    <style>
+        /* Research page specific styles */
+        .research-container {
+            max-width: 1400px;
+            margin: 100px auto 50px;
+            padding: 0 20px;
+        }
+
+        .research-header {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+
+        .research-title {
+            font-size: 3rem;
+            margin-bottom: 15px;
+            position: relative;
+            display: inline-block;
+        }
+
+        .research-title::after {
+            content: "";
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 3px;
+            background-color: #333;
+        }
+
+        .research-subtitle {
+            font-size: 1.2rem;
+            color: #666;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        /* Comparison Grid */
+        .comparison-container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 30px;
+            margin-bottom: 80px;
+        }
+
+        .comparison-header {
+            grid-column: span 2;
+            display: flex;
+            justify-content: space-between;
+            padding: 0 20px;
+            margin-bottom: 20px;
+        }
+
+        .comparison-header h2 {
+            font-size: 1.8rem;
+            color: #333;
+            position: relative;
+            padding-bottom: 10px;
+        }
+
+        .comparison-header h2::after {
+            content: "";
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 40px;
+            height: 2px;
+            background-color: #333;
+        }
+
+        .comparison-side {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 30px;
+        }
+
+        .comparison-title {
+            text-align: center;
+            font-size: 1.3rem;
+            font-weight: 600;
+            margin-bottom: 20px;
+            color: #333;
+        }
+
+        /* Design Card */
+        .design-card {
+            position: relative;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .design-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
+        }
+
+        .design-image {
+            width: 100%;
+            height: 400px;
+            overflow: hidden;
+        }
+
+        .design-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s;
+        }
+
+        .design-card:hover .design-image img {
+            transform: scale(1.05);
+        }
+
+        .design-info {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.8);
+            color: white;
+            opacity: 0;
+            transition: opacity 0.3s;
+            padding: 25px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .design-card:hover .design-info {
+            opacity: 1;
+        }
+
+        .info-section {
+            margin-bottom: 20px;
+        }
+
+        .info-section h4 {
+            font-size: 1.1rem;
+            margin-bottom: 8px;
+            color: #fff;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+            padding-bottom: 5px;
+        }
+
+        .info-section p {
+            font-size: 0.95rem;
+            line-height: 1.6;
+            color: rgba(255, 255, 255, 0.9);
+        }
+
+        @media (max-width: 1200px) {
+            .design-image {
+                height: 250px;
+            }
+        }
+
+        @media (max-width: 992px) {
+            .comparison-container {
+                grid-template-columns: 1fr;
+                gap: 50px;
+            }
+
+            .comparison-header {
+                grid-column: span 1;
+            }
+
+            .comparison-side + .comparison-side {
+                margin-top: 30px;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .research-title {
+                font-size: 2.5rem;
+            }
+
+            .design-info {
+                padding: 15px;
+            }
+
+            .info-section h4 {
+                font-size: 1rem;
+            }
+
+            .info-section p {
+                font-size: 0.85rem;
+            }
+        }
+
+        @media (max-width: 576px) {
+            .scroll-indicator {
+                display: none;
+            }
+        }
+    </style>
+</head>
+<body>
+<!-- Loading Screen -->
+<div class="loading-screen">
+    <div class="loader"></div>
+</div>
+
+
+<header>
+    <div>LEROY</div>
+    <nav>
+        <ul>
+            <li><a href="../index.html">HOME</a></li>
+            <li><a href="blog.html">BLOG</a></li>
+            <li><a href="products.html">PRODUCTS</a></li>
+            <li><a href="about.html">ABOUT</a></li>
+            <li><a href="contact.html">CONTACT US</a></li>
+            <li><a href="research.html">RESEARCH</a></li>
+        </ul>
+    </nav>
+</header>
+
+<!-- Research Content -->
+<div class="research-container">
+    <div class="research-header">
+        <h1 class="research-title">UI Design Research</h1>
+        <p class="research-subtitle">Comparative analysis of interface designs across different platforms and applications</p>
+    </div>
+
+    <div class="comparison-container" id="comparison-1">
+        <div class="comparison-header">
+            <h2>Dashboard Interfaces</h2>
+            <h2>Analytics Dashboards</h2>
+        </div>
+
+        <!-- Left Side -->
+        <div class="comparison-side">
+            <div class="comparison-title">Personal Finance Apps</div>
+
+            <div class="design-card">
+                <div class="design-image">
+                    <img src="images/design1-left.jpg" alt="Finance Dashboard 1">
+                </div>
+                <div class="design-info">
+                    <div class="info-section">
+                        <h4>Similarities in UI</h4>
+                        <p>Card-based layout with rounded corners, consistent use of whitespace, and prominent display of numerical data with colored indicators for positive/negative values.</p>
+                    </div>
+                    <div class="info-section">
+                        <h4>Unique Function</h4>
+                        <p>Integrated budget forecasting with AI-powered spending pattern analysis that adapts to user behavior over time.</p>
+                    </div>
+                    <div class="info-section">
+                        <h4>Design Inspiration in Components</h4>
+                        <p>Minimalist gauge charts inspired by automotive dashboards, with gradient color coding for visual hierarchy of financial health indicators.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="design-card">
+                <div class="design-image">
+                    <img src="images/design2-left.jpg" alt="Finance Dashboard 2">
+                </div>
+                <div class="design-info">
+                    <div class="info-section">
+                        <h4>Similarities in UI</h4>
+                        <p>Horizontal navigation with icon + text format, consistent color-coding for transaction types, and prominently displayed account balances with historical trends.</p>
+                    </div>
+                    <div class="info-section">
+                        <h4>Unique Function</h4>
+                        <p>Dynamic categorization system that learns from manual corrections and adapts to user-specific purchase patterns.</p>
+                    </div>
+                    <div class="info-section">
+                        <h4>Design Inspiration in Components</h4>
+                        <p>Transaction list inspired by messaging apps with avatars for merchants and swipe actions for quick categorization.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="design-card">
+                <div class="design-image">
+                    <img src="images/design3-left.jpg" alt="Finance Dashboard 3">
+                </div>
+                <div class="design-info">
+                    <div class="info-section">
+                        <h4>Similarities in UI</h4>
+                        <p>Bottom tab navigation, floating action button for quick actions, and dual-tone color scheme for distinguishing income from expenses.</p>
+                    </div>
+                    <div class="info-section">
+                        <h4>Unique Function</h4>
+                        <p>Goal-based savings feature with visual progress indicators and milestone celebrations to encourage positive financial habits.</p>
+                    </div>
+                    <div class="info-section">
+                        <h4>Design Inspiration in Components</h4>
+                        <p>Progress visualization inspired by fitness apps, with streaks and achievements to gamify financial discipline.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="design-card">
+                <div class="design-image">
+                    <img src="images/design4-left.jpg" alt="Finance Dashboard 4">
+                </div>
+                <div class="design-info">
+                    <div class="info-section">
+                        <h4>Similarities in UI</h4>
+                        <p>Dark mode interface with high contrast for numerical data, circular progress indicators for budget categories, and swipeable card interface for accounts.</p>
+                    </div>
+                    <div class="info-section">
+                        <h4>Unique Function</h4>
+                        <p>Social comparison feature that anonymously benchmarks spending patterns against similar demographic profiles.</p>
+                    </div>
+                    <div class="info-section">
+                        <h4>Design Inspiration in Components</h4>
+                        <p>Spending breakdown visualization inspired by astronomical charts, with planets representing spending categories sized by proportion.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="design-card">
+                <div class="design-image">
+                    <img src="images/design5-left.jpg" alt="Finance Dashboard 5">
+                </div>
+                <div class="design-info">
+                    <div class="info-section">
+                        <h4>Similarities in UI</h4>
+                        <p>Grid layout with customizable widgets, persistent summary bar with key metrics, and color-coded transaction history with iconography.</p>
+                    </div>
+                    <div class="info-section">
+                        <h4>Unique Function</h4>
+                        <p>Subscription management system that detects recurring payments and provides optimization recommendations for similar services.</p>
+                    </div>
+                    <div class="info-section">
+                        <h4>Design Inspiration in Components</h4>
+                        <p>Calendar-based spending view inspired by productivity apps, with heat-mapping to visualize high-spending days and periods.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Right Side -->
+        <div class="comparison-side">
+            <div class="comparison-title">Business Intelligence Platforms</div>
+
+            <div class="design-card">
+                <div class="design-image">
+                    <img src="images/design1-right.jpg" alt="Analytics Dashboard 1">
+                </div>
+                <div class="design-info">
+                    <div class="info-section">
+                        <h4>Similarities in UI</h4>
+                        <p>Grid-based dashboard with draggable widgets, consistent use of data visualization components, and hierarchical information display with drilling capabilities.</p>
+                    </div>
+                    <div class="info-section">
+                        <h4>Unique Function</h4>
+                        <p>Anomaly detection system that automatically identifies statistical outliers and highlights potential areas for investigation.</p>
+                    </div>
+                    <div class="info-section">
+                        <h4>Design Inspiration in Components</h4>
+                        <p>Heat map visualizations inspired by geographic information systems, with multi-variable color encoding for complex data relationships.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="design-card">
+                <div class="design-image">
+                    <img src="images/design2-right.jpg" alt="Analytics Dashboard 2">
+                </div>
+                <div class="design-info">
+                    <div class="info-section">
+                        <h4>Similarities in UI</h4>
+                        <p>Side navigation with collapsible sections, responsive chart containers with consistent styling, and dashboard filter controls with visual state indicators.</p>
+                    </div>
+                    <div class="info-section">
+                        <h4>Unique Function</h4>
+                        <p>Natural language query system that allows business users to ask questions in plain English and generates appropriate visualizations.</p>
+                    </div>
+                    <div class="info-section">
+                        <h4>Design Inspiration in Components</h4>
+                        <p>Query builder interface inspired by search engines, with autocomplete suggestions and semantic highlighting for data entities.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="design-card">
+                <div class="design-image">
+                    <img src="images/design3-right.jpg" alt="Analytics Dashboard 3">
+                </div>
+                <div class="design-info">
+                    <div class="info-section">
+                        <h4>Similarities in UI</h4>
+                        <p>Card-based modular layout with consistent header styling, standardized chart formatting with tooltips, and global date range selector.</p>
+                    </div>
+                    <div class="info-section">
+                        <h4>Unique Function</h4>
+                        <p>Collaborative annotation system that allows team members to comment on specific data points and share insights directly within visualizations.</p>
+                    </div>
+                    <div class="info-section">
+                        <h4>Design Inspiration in Components</h4>
+                        <p>Annotation interface inspired by digital design tools, with layered commenting and version history for dashboard states.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="design-card">
+                <div class="design-image">
+                    <img src="images/design4-right.jpg" alt="Analytics Dashboard 4">
+                </div>
+                <div class="design-info">
+                    <div class="info-section">
+                        <h4>Similarities in UI</h4>
+                        <p>Executive summary cards with KPIs, consistent typography with hierarchical sizing for data points, and cohesive color palette across all visualizations.</p>
+                    </div>
+                    <div class="info-section">
+                        <h4>Unique Function</h4>
+                        <p>Predictive analytics forecasting with confidence intervals, allowing business users to model different scenarios and understand potential outcomes.</p>
+                    </div>
+                    <div class="info-section">
+                        <h4>Design Inspiration in Components</h4>
+                        <p>Forecast modeling controls inspired by financial trading platforms, with drag-handle interfaces to adjust parameters and see real-time impacts.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="design-card">
+                <div class="design-image">
+                    <img src="images/design5-right.jpg" alt="Analytics Dashboard 5">
+                </div>
+                <div class="design-info">
+                    <div class="info-section">
+                        <h4>Similarities in UI</h4>
+                        <p>Minimalist design with emphasis on data, contextual action menus for each visualization, and uniform spacing between dashboard elements.</p>
+                    </div>
+                    <div class="info-section">
+                        <h4>Unique Function</h4>
+                        <p>Cross-platform synchronization that maintains visualization states and user preferences across devices while enabling offline analysis capabilities.</p>
+                    </div>
+                    <div class="info-section">
+                        <h4>Design Inspiration in Components</h4>
+                        <p>State management interface inspired by version control systems, allowing users to bookmark specific dashboard configurations and share them with teammates.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="comparison-container" id="comparison-2">
+        <div class="comparison-header">
+            <h2>E-commerce Interfaces</h2>
+            <h2>Social Media Platforms</h2>
+        </div>
+
+        <!-- Left Side -->
+        <div class="comparison-side">
+            <div class="comparison-title">Product Browsing Experiences</div>
+
+            <div class="design-card">
+                <div class="design-image">
+                    <img src="images/ecom1-left.jpg" alt="E-commerce Interface 1">
+                </div>
+                <div class="design-info">
+                    <div class="info-section">
+                        <h4>Similarities in UI</h4>
+                        <p>Grid-based product listings with consistent card heights, quick-view functionality on hover, and persistent filtering sidebar with checkbox controls.</p>
+                    </div>
+                    <div class="info-section">
+                        <h4>Unique Function</h4>
+                        <p>Visual search capability that allows users to upload images and find visually similar products across the catalog.</p>
+                    </div>
+                    <div class="info-section">
+                        <h4>Design Inspiration in Components</h4>
+                        <p>Product card design inspired by physical retail price tags, with folded corner effects and layered information hierarchy.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="design-card">
+                <div class="design-image">
+                    <img src="images/ecom2-left.jpg" alt="E-commerce Interface 2">
+                </div>
+                <div class="design-info">
+                    <div class="info-section">
+                        <h4>Similarities in UI</h4>
+                        <p>Horizontal category navigation with image thumbnails, infinite scroll product loading, and floating add-to-cart functionality that remains accessible.</p>
+                    </div>
+                    <div class="info-section">
+                        <h4>Unique Function</h4>
+                        <p>Augmented reality try-before-you-buy feature that allows users to visualize products in their own space using their device camera.</p>
+                    </div>
+                    <div class="info-section">
+                        <h4>Design Inspiration in Components</h4>
+                        <p>AR visualization controls inspired by camera apps, with intuitive gestures for product placement and scaling in the real world.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="design-card">
+                <div class="design-image">
+                    <img src="images/ecom3-left.jpg" alt="E-commerce Interface 3">
+                </div>
+                <div class="design-info">
+                    <div class="info-section">
+                        <h4>Similarities in UI</h4>
+                        <p>Multi-level navigation with expandable subcategories, product comparison functionality with tabular data display, and sticky add-to-cart bar on product pages.</p>
+                    </div>
+                    <div class="info-section">
+                        <h4>Unique Function</h4>
+                        <p>Dynamic bundling system that suggests complementary products based on both global purchasing patterns and individual browsing history.</p>
+                    </div>
+                    <div class="info-section">
+                        <h4>Design Inspiration in Components</h4>
+                        <p>Bundle builder interface inspired by meal kit selection flows, with visual composition of the complete package as items are added or removed.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="design-card">
+                <div class="design-image">
+                    <img src="images/ecom4-left.jpg" alt="E-commerce Interface 4">
+                </div>
+                <div class="design-info">
+                    <div class="info-section">
+                        <h4>Similarities in UI</h4>
+                        <p>Prominent search with auto-suggestions, product images on clean backgrounds with consistent aspect ratios, and visible inventory/availability indicators.</p>
+                    </div>
+                    <div class="info-section">
+                        <h4>Unique Function</h4>
+                        <p>Customer question routing that connects product-specific inquiries directly to previous purchasers or category experts for authentic answers.</p>
+                    </div>
+                    <div class="info-section">
+                        <h4>Design Inspiration in Components</h4>
+                        <p>Q&A interface inspired by community forums, with reputation systems and featured answers to build trust in the purchasing process.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="design-card">
+                <div class="design-image">
+                    <img src="images/ecom5-left.jpg" alt="E-commerce Interface 5">
+                </div>
+                <div class="design-info">
+                    <div class="info-section">
+                        <h4>Similarities in UI</h4>
+                        <p>Wishlist functionality with simple toggles, size/variant selectors with visual feedback for availability, and persistent shopping cart with quantity adjusters.</p>
+                    </div>
+                    <div class="info-section">
+                        <h4>Unique Function</h4>
+                        <p>Price tracking with customizable alerts that notify users when products drop below their specified threshold or during flash sales.</p>
+                    </div>
+                    <div class="info-section">
+                        <h4>Design Inspiration in Components</h4>
+                        <p>Price history visualization inspired by stock market charts, with annotated events and seasonal patterns to help users time their purchases.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Right Side -->
+        <div class="comparison-side">
+            <div class="comparison-title">Content Discovery Feeds</div>
+
+            <div class="design-card">
+                <div class="design-image">
+                    <img src="images/social1-right.jpg" alt="Social Media Interface 1">
+                </div>
+                <div class="design-info">
+                    <div class="info-section">
+                        <h4>Similarities in UI</h4>
+                        <p>Infinite scrolling content feed, engagement metrics with iconic representation, and pull-to-refresh functionality with visual loading indicators.</p>
+                    </div>
+                    <div class="info-section">
+                        <h4>Unique Function</h4>
+                        <p>Content time capsules that allow users to schedule posts for future delivery to specific audiences or their future selves.</p>
+                    </div>
+                    <div class="info-section">
+                        <h4>Design Inspiration in Components</h4>
+                        <p>Scheduling interface inspired by calendar applications, with visual timeline representation and delivery confirmation mechanics.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="design-card">
+                <div class="design-image">
+                    <img src="images/social2-right.jpg" alt="Social Media Interface 2">
+                </div>
+                <div class="design-info">
+                    <div class="info-section">
+                        <h4>Similarities in UI</h4>
+                        <p>Story format with progress indicators, swipeable horizontal content carousels, and double-tap interaction patterns for quick engagement.</p>
+                    </div>
+                    <div class="info-section">
+                        <h4>Unique Function</h4>
+                        <p>Collaborative story creation that enables multiple users to contribute to a shared narrative with intuitive authorship attribution.</p>
+                    </div>
+                    <div class="info-section">
+                        <h4>Design Inspiration in Components</h4>
+                        <p>Collaborative editing interface inspired by digital whiteboarding tools, with real-time indication of who is viewing and contributing.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="design-card">
+                <div class="design-image">
+                    <img src="images/social3-right.jpg" alt="Social Media Interface 3">
+                </div>
+                <div class="design-info">
+                    <div class="info-section">
+                        <h4>Similarities in UI</h4>
+                        <p>Profile views with grid/list toggle for content display, notification grouping by type, and comment threading with reply functionality.</p>
+                    </div>
+                    <div class="info-section">
+                        <h4>Unique Function</h4>
+                        <p>Interest clustering that uses AI to group a user's network based on shared interests rather than just connection strength.</p>
+                    </div>
+                    <div class="info-section">
+                        <h4>Design Inspiration in Components</h4>
+                        <p>Network visualization inspired by mind-mapping tools, with intuitive gesture-based reorganization of contact groups.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="design-card">
+                <div class="design-image">
+                    <img src="images/social4-right.jpg" alt="Social Media Interface 4">
+                </div>
+                <div class="design-info">
+                    <div class="info-section">
+                        <h4>Similarities in UI</h4>
+                        <p>Activity feed with chronological updates, profile customization options with preview functionality, and direct messaging with typing indicators.</p>
+                    </div>
+                    <div class="info-section">
+                        <h4>Unique Function</h4>
+                        <p>Mood-based content filtering that allows users to specify their current emotional state and receive appropriately matched content.</p>
+                    </div>
+                    <div class="info-section">
+                        <h4>Design Inspiration in Components</h4>
+                        <p>Mood selection interface inspired by music streaming apps, with a spectrum of emotional states visually represented for intuitive selection.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="design-card">
+                <div class="design-image">
+                    <img src="images/social5-right.jpg" alt="Social Media Interface 5">
+                </div>
+                <div class="design-info">
+                    <div class="info-section">
+                        <h4>Similarities in UI</h4>
+                        <p>Content creation shortcuts, audience selection controls for privacy management, and media library with organization tools.</p>
+                    </div>
+                    <div class="info-section">
+                        <h4>Unique Function</h4>
+                        <p>Digital wellbeing features that provide insights into usage patterns and enable users to set meaningful engagement boundaries.</p>
+                    </div>
+                    <div class="info-section">
+                        <h4>Design Inspiration in Components</h4>
+                        <p>Usage analytics interface inspired by fitness tracking apps, with goal-setting mechanisms and positive reinforcement for healthy digital habits.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<footer>
+    <div class="footer-content">
+        <p>&copy; 2025 Team Portfolio. All rights reserved.</p>
+        <p>Quality work for every project.</p>
+    </div>
+</footer>
+
+<script>
+    // Loading screen functionality
+    window.addEventListener('load', function() {
+        const loadingScreen = document.querySelector('.loading-screen');
+        loadingScreen.classList.add('fade-out');
+
+        setTimeout(function() {
+            loadingScreen.style.display = 'none';
+        }, 800);
+    });
+</script>
+</body>
+</html>
