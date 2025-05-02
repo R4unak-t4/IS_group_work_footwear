@@ -1,0 +1,677 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Raunak Thapa Magar - Portfolio</title>
+  <link rel="stylesheet" href="../../../css/style.css">
+  <link rel="stylesheet" href="../../../css/about/about.css">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800&display=swap">
+  <style>
+    /* Specific styles for Raunak's portfolio */
+    .dark-theme {
+      background-color: #121212;
+      color: #fff;
+    }
+
+    .portfolio-header {
+      position: relative;
+      height: 90vh;
+      overflow: hidden;
+    }
+
+    .video-background {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      z-index: 0;
+    }
+
+    .video-background video {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .video-overlay {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0, 0, 0, 0.7);
+      z-index: 1;
+    }
+
+    .header-content {
+      position: relative;
+      height: 100%;
+      max-width: 1400px;
+      margin: 0 auto;
+      padding: 0 20px;
+      z-index: 2;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .date-author {
+      position: absolute;
+      top: 40px;
+      right: 40px;
+      text-align: right;
+      font-size: 0.9rem;
+      letter-spacing: 1px;
+    }
+
+    .date,
+    .author {
+      display: block;
+      margin-bottom: 5px;
+    }
+
+    .title-container {
+      flex: 1;
+      padding-right: 40px;
+    }
+
+    .creative {
+      font-size: 3rem;
+      font-weight: 600;
+      margin-bottom: -10px;
+    }
+
+    .portfolio {
+      font-size: 8rem;
+      font-weight: 800;
+      line-height: 1;
+      letter-spacing: -2px;
+    }
+
+    /* Animated circular frame for Profile picture*/
+    .header-image {
+      flex: 1;
+      height: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: flex-end;
+      position: relative;
+    }
+
+    .image-frame {
+      position: relative;
+      width: 350px;
+      height: 350px;
+      border-radius: 50%;
+      overflow: hidden;
+      box-shadow: 0 0 20px rgba(255, 255, 255, 0.2);
+    }
+
+    .image-frame img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    /* Animated border */
+    .animated-border {
+      position: absolute;
+      top: -10px;
+      left: -10px;
+      right: -10px;
+      bottom: -10px;
+      border-radius: 50%;
+      border: 2px solid transparent;
+      border-top-color: #fff;
+      border-bottom-color: rgba(255, 255, 255, 0.5);
+      animation: rotate 8s linear infinite;
+    }
+
+    .animated-border:before {
+      content: '';
+      position: absolute;
+      top: -20px;
+      left: -20px;
+      right: -20px;
+      bottom: -20px;
+      border-radius: 50%;
+      border: 3px solid transparent;
+      border-top-color: rgba(255, 255, 255, 0.3);
+      border-bottom-color: rgba(255, 255, 255, 0.7);
+      animation: rotate 12s linear infinite reverse;
+    }
+
+    .animated-border:after {
+      content: '';
+      position: absolute;
+      top: 5px;
+      left: 5px;
+      right: 5px;
+      bottom: 5px;
+      border-radius: 50%;
+      border: 2px solid transparent;
+      border-top-color: rgba(255, 255, 255, 0.8);
+      border-bottom-color: rgba(255, 255, 255, 0.2);
+      animation: rotate 6s linear infinite;
+    }
+
+    @keyframes rotate {
+      0% {
+        transform: rotate(0deg);
+      }
+      100% {
+        transform: rotate(360deg);
+      }
+    }
+
+    .portfolio-content {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 80px 20px;
+    }
+
+    .about-section,
+    .experience-section,
+    .skills-section,
+    .projects-section {
+      margin-bottom: 80px;
+    }
+
+    .about-section h2,
+    .experience-section h2,
+    .skills-section h2,
+    .projects-section h2 {
+      font-size: 2rem;
+      margin-bottom: 30px;
+      position: relative;
+    }
+
+    .about-section h2::after,
+    .experience-section h2::after,
+    .skills-section h2::after,
+    .projects-section h2::after {
+      content: "";
+      position: absolute;
+      bottom: -10px;
+      left: 0;
+      width: 60px;
+      height: 3px;
+      background-color: #fff;
+    }
+
+    .about-section p {
+      font-size: 1.1rem;
+      max-width: 800px;
+      line-height: 1.8;
+    }
+
+    .experience-item {
+      display: flex;
+      margin-bottom: 40px;
+      gap: 40px;
+    }
+
+    .experience-year {
+      flex: 0 0 150px;
+      font-weight: 600;
+      font-size: 1.1rem;
+    }
+
+    .experience-details h3 {
+      font-size: 1.4rem;
+      margin-bottom: 5px;
+    }
+
+    .experience-details h4 {
+      font-size: 1rem;
+      font-weight: 500;
+      color: #aaa;
+      margin-bottom: 15px;
+    }
+
+    .experience-details p {
+      line-height: 1.8;
+    }
+
+    .skills-container {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 15px;
+    }
+
+    .skill {
+      background-color: rgba(255, 255, 255, 0.1);
+      padding: 10px 20px;
+      border-radius: 30px;
+      font-size: 0.9rem;
+      transition: background-color 0.3s;
+    }
+
+    .skill:hover {
+      background-color: rgba(255, 255, 255, 0.2);
+    }
+
+    /* Projects Section */
+    .projects-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 30px;
+    }
+
+    .project-card {
+      background-color: rgba(255, 255, 255, 0.05);
+      border-radius: 10px;
+      overflow: hidden;
+      transition: transform 0.3s, box-shadow 0.3s;
+    }
+
+    .project-card:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+    }
+
+    .project-image {
+      height: 200px;
+      overflow: hidden;
+      position: relative;
+    }
+
+    .project-image img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.5s;
+    }
+
+    .project-card:hover .project-image img {
+      transform: scale(1.05);
+    }
+
+    .project-overlay {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(to top, rgba(0, 0, 0, 0.8), transparent);
+      opacity: 0;
+      transition: opacity 0.3s;
+      display: flex;
+      align-items: flex-end;
+      padding: 20px;
+    }
+
+    .project-card:hover .project-overlay {
+      opacity: 1;
+    }
+
+    .project-info {
+      padding: 20px;
+    }
+
+    .project-info h3 {
+      font-size: 1.3rem;
+      margin-bottom: 10px;
+    }
+
+    .project-info p {
+      color: #aaa;
+      margin-bottom: 15px;
+      line-height: 1.6;
+    }
+
+    .project-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+
+    .project-tag {
+      background-color: rgba(255, 255, 255, 0.1);
+      padding: 5px 10px;
+      border-radius: 15px;
+      font-size: 0.8rem;
+    }
+
+    .view-project {
+      display: inline-block;
+      color: #fff;
+      background-color: rgba(255, 255, 255, 0.1);
+      padding: 8px 15px;
+      border-radius: 5px;
+      margin-top: 15px;
+      transition: background-color 0.3s;
+    }
+
+    .view-project:hover {
+      background-color: rgba(255, 255, 255, 0.2);
+    }
+
+    .portfolio-footer {
+      background-color: #0a0a0a;
+      padding: 40px 20px;
+    }
+    .portfolio-footer .contact-info,
+
+    .portfolio-footer .contact-info {
+      border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    }
+
+
+    @media (max-width: 1200px) {
+      .creative {
+        font-size: 2.5rem;
+      }
+
+      .portfolio {
+        font-size: 6rem;
+      }
+
+      .image-frame {
+        width: 300px;
+        height: 300px;
+      }
+    }
+
+    @media (max-width: 992px) {
+      .header-content {
+        flex-direction: column;
+        justify-content: center;
+      }
+
+      .title-container {
+        padding-right: 0;
+        text-align: center;
+        margin-bottom: 40px;
+      }
+
+      .header-image {
+        justify-content: center;
+      }
+
+      .image-frame {
+        width: 250px;
+        height: 250px;
+      }
+
+      .projects-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+
+    @media (max-width: 768px) {
+      .creative {
+        font-size: 2rem;
+      }
+
+      .portfolio {
+        font-size: 4rem;
+      }
+
+      .experience-item {
+        flex-direction: column;
+        gap: 10px;
+      }
+
+      .experience-year {
+        flex: none;
+      }
+
+      .image-frame {
+        width: 200px;
+        height: 200px;
+      }
+
+      .projects-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+<body>
+<!-- Loading Screen -->
+<div class="loading-screen">
+  <div class="loader"></div>
+</div>
+
+<header>
+  <div>LEROY</div>
+  <nav>
+    <ul>
+      <li><a href="../index.html">HOME</a></li>
+      <li><a href="../blog.html">BLOG</a></li>
+      <li><a href="../products.html">PRODUCTS</a></li>
+      <li><a href="about.html">ABOUT</a></li>
+      <li><a href="../contact.html">CONTACT US</a></li>
+      <li><a href="../research.html">RESEARCH</a></li>
+    </ul>
+  </nav>
+</header>
+
+
+<!-- Raunak's Portfolio -->
+<section class="dark-theme">
+  <div class="portfolio-header">
+    <!-- Video Background ; plays muted and loops-->
+    <div class="video-background">
+      <video autoplay loop muted playsinline>
+        <source src="../../../images/about/creative-background.mp4" type="video/mp4">
+      </video>
+<!-- video Overlay to make it darker on the left side to make the text more visible-->
+      <div class="video-overlay"></div>
+    </div>
+
+    <div class="header-content">
+      <div class="date-author">
+        <span class="date">DECEMBER / 2007</span>
+        <span class="author">AI Agents developer</span>
+      </div>
+      <div class="title-container">
+        <h1 class="creative">THAPA MAGAR</h1>
+        <h1 class="portfolio">RAUNAK</h1>
+      </div>
+      <div class="header-image">
+        <div class="image-frame">
+          <img src="../../../images/about/raunak.png" alt="Raunak Thapa Magar">
+          <div class="animated-border"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="portfolio-content">
+    <div class="about-section">
+      <h2>About Me</h2>
+      <p>Creative professional with 2+ years of experience building agentic AI products and AI models—blending technical innovation with design to craft intelligent, user-centric solutions.</p>
+    </div>
+
+    <!-- Projects Section -->
+    <div class="projects-section">
+      <h2>Featured Projects</h2>
+      <div class="projects-grid">
+        <!-- Finance assistant Ai -->
+        <div class="project-card">
+          <div class="project-image">
+            <img src="../../../images/about/project1.png" alt="Leroy Ai Finance">
+            <div class="project-overlay">
+              <a href="https://leroy-ai-finance.vercel.app/" target="_blank">
+                <div class="view-project">View Details</div>
+              </a>
+
+            </div>
+          </div>
+          <div class="project-info">
+            <h3>Finance suggestion and bill scanning Ai</h3>
+            <p>Leroy Finance is an AI-powered app that scans receipts, tracks expenses, and offers smart insights to help you manage your budget effortlessly.</p>
+            <div class="project-tags">
+              <span class="project-tag">Google generative AI</span>
+              <span class="project-tag">Lang Chain</span>
+              <span class="project-tag">Next.js</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Project 2 -->
+        <div class="project-card">
+          <div class="project-image">
+            <img src="../../../images/about/project2.png" alt="Hand gesture Food ordering">
+            <div class="project-overlay">
+              <a href="https://github.com/R4unak-t4/Hand-Gesture-ordering-system" target="_blank">
+                <div class="view-project">View Details</div>
+              </a>
+            </div>
+          </div>
+          <div class="project-info">
+            <h3>Hand gesture Food ordering system</h3>
+            <p>Intelligent conversational agent with RAG capabilities for customer support automation.</p>
+            <div class="project-tags">
+              <span class="project-tag">NLP</span>
+              <span class="project-tag">Media pipe</span>
+              <span class="project-tag">Open CV (Python)</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Project 3 -->
+        <div class="project-card">
+          <div class="project-image">
+            <img src="../../../images/about/project3.png" alt="Data Visualization">
+            <div class="project-overlay">
+              <a href="https://github.com/R4unak-t4/Leroy-AI-MERN-AI-" target="_blank">
+                <div class="view-project">View Details</div>
+              </a>
+            </div>
+          </div>
+          <div class="project-info">
+            <h3>Collaborative Ai Developer</h3>
+            <p>Ai agent which chats along with multiple collaborators in a room. Also shows the file Tree and a code in proper highlight</p>
+            <div class="project-tags">
+              <span class="project-tag">MERN Stack</span>
+              <span class="project-tag">Anthropic</span>
+              <span class="project-tag">Socket.io</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="experience-section">
+      <h2>Professional Experience</h2>
+
+      <div class="experience-item">
+        <div class="experience-year">2025 - <span style="color: #2ecc71">Present</span></div>
+        <div class="experience-details">
+          <h3>Applied AI Engineer</h3>
+          <h4>Social Eyes, United States of America</h4>
+          <p>Worked as an Applied AI Engineer at Social Eyes AI, focusing on Retrieval-Augmented Generation (RAG) and supervised fine-tuning of vision-language models to detect diseases from retinal images. Fine-tuned a ViT-GPT hybrid model on a custom dataset of 50,000 annotated retinal scans, optimizing over 340M parameters. Used contrastive loss and cross-entropy for multi-label classification, achieving 91.3% validation accuracy. Managed model checkpoints and versioning, reducing training instability across epochs. Leveraged FAISS-based vector stores for efficient retrieval and incorporated external medical literature as context, improving explainability. Final deployed model included 120M trainable weights with 8 attention heads and a 512-token context window.</p>
+        </div>
+      </div>
+
+      <div class="experience-item">
+        <div class="experience-year">2024 - 2024</div>
+        <div class="experience-details">
+          <h3>Python & C programming Teacher</h3>
+          <h4>Bloom Nepal School, Lalitpur</h4>
+          <p>Taught students in grades 8–10 at Bloom Nepal School in Lubhu, Lalitpur. Delivered engaging lessons in science and technology, fostering critical thinking and problem-solving skills. Developed tailored teaching materials and projects to support diverse learning styles, leading to improved academic performance and student engagement.</p>
+        </div>
+      </div>
+
+      <div class="experience-item">
+        <div class="experience-year">2023 - 2023</div>
+        <div class="experience-details">
+          <h3>Data Analyst</h3>
+          <h4>Baba Print World, Kathmandu</h4>
+          <p>Worked as a Data Analyst at Baba Print World. Analyzed customer and sales data to uncover insights that informed marketing strategies. Automated reporting processes, reducing manual work by 40%. Provided data-driven recommendations that helped optimize campaign targeting and improve overall operational efficiency.</p>
+        </div>
+      </div>
+
+      <div class="experience-item">
+        <div class="experience-year">2023 - 2023</div>
+        <div class="experience-details">
+          <h3>Web Developer Intern</h3>
+          <h4>Opal Securities Lazimpat, Kathmandu</h4>
+          <p>Worked as a Full-Stack MERN Web Developer Intern at Opal Securities. Contributed to the development of internal dashboards and client-facing web applications. Gained hands-on experience with React, Node.js, MongoDB, and Express. Collaborated with senior developers to improve site performance and implemented responsive UI components across multiple projects.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="skills-section">
+      <h2>Skills</h2>
+      <div class="skills-container">
+        <div class="skill">System Design</div>
+        <div class="skill">Python</div>
+        <div class="skill">Supervised Fine Tuning</div>
+        <div class="skill">Retrieval Augmented Generation</div>
+        <div class="skill">Machine Learning</div>
+        <div class="skill">Generative AI</div>
+        <div class="skill">API Development</div>
+        <div class="skill">ML OPS</div>
+        <div class="skill">AWS Architecture</div>
+        <div class="skill">Core Java</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="portfolio-footer">
+    <div class="contact-info">
+      <p>Thapamagarraunak@gmail.com</p>
+      <p>+977 9818304904</p>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="footer-content">
+    <p>&copy; 2025 Team Portfolio. All rights reserved.</p>
+    <p>Quality work for every project.</p>
+  </div>
+</footer>
+
+<script>
+  // Loading screen functionality
+  window.addEventListener('load', function() {
+    const loadingScreen = document.querySelector('.loading-screen');
+    loadingScreen.classList.add('fade-out');
+
+    setTimeout(function() {
+      loadingScreen.style.display = 'none';
+    }, 800);
+  });
+
+  // Ensure video plays automatically
+  document.addEventListener('DOMContentLoaded', function() {
+    const video = document.querySelector('video');
+
+    // Force play if autoplay doesn't work
+    video.play().catch(function(error) {
+      console.log("Autoplay prevented:", error);
+
+      // Add a play button if autoplay is blocked
+      if (error.name === "NotAllowedError") {
+        const playButton = document.createElement('button');
+        playButton.textContent = "Play Video";
+        playButton.style.position = "absolute";
+        playButton.style.zIndex = "3";
+        playButton.style.top = "50%";
+        playButton.style.left = "50%";
+        playButton.style.transform = "translate(-50%, -50%)";
+        playButton.style.padding = "10px 20px";
+        playButton.style.backgroundColor = "#fff";
+        playButton.style.border = "none";
+        playButton.style.borderRadius = "4px";
+        playButton.style.cursor = "pointer";
+
+        playButton.addEventListener('click', function() {
+          video.play();
+          this.remove();
+        });
+
+        document.querySelector('.video-background').appendChild(playButton);
+      }
+    });
+  });
+</script>
+</body>
+</html>

@@ -1,6 +1,6 @@
 // Wait for the DOM to be fully loaded
 document.addEventListener('DOMContentLoaded', function() {
-    // Loading screen animation (same as main.js)
+    // Loading screen animation (same as main.java-script)
     setTimeout(() => {
         const loadingScreen = document.querySelector('.loading-screen');
         if (loadingScreen) {
