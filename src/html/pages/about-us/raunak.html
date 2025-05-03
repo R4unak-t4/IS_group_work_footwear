@@ -1,69 +1,68 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+  <!--Meta tags for SEO and browser compatibility, also for responsive layouts according to the viewport of device-->
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="author" content="Raunak Thapa Magar">
+  <meta name="description" content="Hey this is the portfolio of Raunak">
   <title>Raunak Thapa Magar - Portfolio</title>
   <link rel="stylesheet" href="../../../css/style.css">
   <link rel="stylesheet" href="../../../css/about/about.css">
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800&display=swap">
+  <link rel="stylesheet" href="../../../css/about/raunak.css">
   <style>
-    /* Specific styles for Raunak's portfolio */
-    .dark-theme {
-      background-color: #121212;
-      color: #fff;
+    /* Animation keyframes */
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to { opacity: 1; }
     }
 
-    .portfolio-header {
-      position: relative;
-      height: 90vh;
-      overflow: hidden;
+    @keyframes slideInLeft {
+      from { transform: translateX(-50px); opacity: 0; }
+      to { transform: translateX(0); opacity: 1; }
     }
 
-    .video-background {
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      z-index: 0;
+    @keyframes slideInRight {
+      from { transform: translateX(50px); opacity: 0; }
+      to { transform: translateX(0); opacity: 1; }
     }
 
-    .video-background video {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
+    @keyframes slideInUp {
+      from { transform: translateY(30px); opacity: 0; }
+      to { transform: translateY(0); opacity: 1; }
     }
 
-    .video-overlay {
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background-color: rgba(0, 0, 0, 0.7);
-      z-index: 1;
+    @keyframes scaleIn {
+      from { transform: scale(0.9); opacity: 0; }
+      to { transform: scale(1); opacity: 1; }
     }
 
-    .header-content {
-      position: relative;
-      height: 100%;
-      max-width: 1400px;
-      margin: 0 auto;
-      padding: 0 20px;
-      z-index: 2;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
+    @keyframes rotate {
+      0% { transform: rotate(0deg); }
+      100% { transform: rotate(360deg); }
+    }
+
+    @keyframes pulse {
+      0% { transform: scale(1); }
+      50% { transform: scale(1.05); }
+      100% { transform: scale(1); }
+    }
+
+    @keyframes shimmer {
+      0% { background-position: -200% 0; }
+      100% { background-position: 200% 0; }
     }
 
     .date-author {
+      /*position of absolute because the texts are loaded above the video*/
       position: absolute;
       top: 40px;
       right: 40px;
       text-align: right;
       font-size: 0.9rem;
       letter-spacing: 1px;
+      animation: fadeIn 1s ease-out 0.5s forwards;
+      opacity: 0;
     }
 
     .date,
@@ -71,26 +70,37 @@
       display: block;
       margin-bottom: 5px;
     }
-
+    /*style for title wrapper which is also my name*/
     .title-container {
       flex: 1;
       padding-right: 40px;
+      animation: fadeIn 1s ease-out forwards;
     }
 
-    .creative {
+    .thapa-magar {
       font-size: 3rem;
       font-weight: 600;
       margin-bottom: -10px;
+      animation: slideInLeft 1s ease-out forwards;
+      opacity: 0;
     }
 
-    .portfolio {
+    .raunak {
       font-size: 8rem;
       font-weight: 800;
       line-height: 1;
       letter-spacing: -2px;
+      animation: slideInLeft 1s ease-out 0.3s forwards;
+      opacity: 0;
+      background: linear-gradient(90deg, #ffffff, #aaaaaa, #ffffff);
+      background-size: 200% auto;
+      -webkit-background-clip: text;
+      background-clip: text;
+      -webkit-text-fill-color: transparent;
+      animation: slideInLeft 1s ease-out 0.3s forwards, shimmer 3s infinite linear;
     }
 
-    /* Animated circular frame for Profile picture*/
+    /* Animated circular frame for Picture*/
     .header-image {
       flex: 1;
       height: 100%;
@@ -98,6 +108,8 @@
       align-items: center;
       justify-content: flex-end;
       position: relative;
+      animation: fadeIn 1s ease-out 0.6s forwards;
+      opacity: 0;
     }
 
     .image-frame {
@@ -107,6 +119,7 @@
       border-radius: 50%;
       overflow: hidden;
       box-shadow: 0 0 20px rgba(255, 255, 255, 0.2);
+      animation: scaleIn 1s ease-out forwards;
     }
 
     .image-frame img {
@@ -115,7 +128,7 @@
       object-fit: cover;
     }
 
-    /* Animated border */
+    /* Animating the border*/
     .animated-border {
       position: absolute;
       top: -10px;
@@ -157,15 +170,6 @@
       animation: rotate 6s linear infinite;
     }
 
-    @keyframes rotate {
-      0% {
-        transform: rotate(0deg);
-      }
-      100% {
-        transform: rotate(360deg);
-      }
-    }
-
     .portfolio-content {
       max-width: 1200px;
       margin: 0 auto;
@@ -177,6 +181,17 @@
     .skills-section,
     .projects-section {
       margin-bottom: 80px;
+      opacity: 0;
+      transform: translateY(30px);
+      transition: opacity 0.8s ease, transform 0.8s ease;
+    }
+
+    .about-section.animate,
+    .experience-section.animate,
+    .skills-section.animate,
+    .projects-section.animate {
+      opacity: 1;
+      transform: translateY(0);
     }
 
     .about-section h2,
@@ -196,9 +211,17 @@
       position: absolute;
       bottom: -10px;
       left: 0;
-      width: 60px;
+      width: 0;
       height: 3px;
       background-color: #fff;
+      transition: width 1s ease;
+    }
+
+    .about-section.animate h2::after,
+    .experience-section.animate h2::after,
+    .skills-section.animate h2::after,
+    .projects-section.animate h2::after {
+      width: 60px;
     }
 
     .about-section p {
@@ -211,6 +234,14 @@
       display: flex;
       margin-bottom: 40px;
       gap: 40px;
+      opacity: 0;
+      transform: translateY(20px);
+      transition: opacity 0.6s ease, transform 0.6s ease;
+    }
+
+    .experience-item.animate {
+      opacity: 1;
+      transform: translateY(0);
     }
 
     .experience-year {
@@ -246,11 +277,20 @@
       padding: 10px 20px;
       border-radius: 30px;
       font-size: 0.9rem;
-      transition: background-color 0.3s;
+      transition: all 0.3s ease;
+      opacity: 0;
+      transform: scale(0.9);
+    }
+
+    .skill.animate {
+      opacity: 1;
+      transform: scale(1);
     }
 
     .skill:hover {
       background-color: rgba(255, 255, 255, 0.2);
+      transform: translateY(-5px);
+      box-shadow: 0 5px 15px rgba(255, 255, 255, 0.1);
     }
 
     /* Projects Section */
@@ -264,7 +304,14 @@
       background-color: rgba(255, 255, 255, 0.05);
       border-radius: 10px;
       overflow: hidden;
-      transition: transform 0.3s, box-shadow 0.3s;
+      transition: transform 0.5s ease, box-shadow 0.5s ease;
+      opacity: 0;
+      transform: translateY(30px);
+    }
+
+    .project-card.animate {
+      opacity: 1;
+      transform: translateY(0);
     }
 
     .project-card:hover {
@@ -282,7 +329,7 @@
       width: 100%;
       height: 100%;
       object-fit: cover;
-      transition: transform 0.5s;
+      transition: transform 0.5s ease;
     }
 
     .project-card:hover .project-image img {
@@ -297,7 +344,7 @@
       height: 100%;
       background: linear-gradient(to top, rgba(0, 0, 0, 0.8), transparent);
       opacity: 0;
-      transition: opacity 0.3s;
+      transition: opacity 0.3s ease;
       display: flex;
       align-items: flex-end;
       padding: 20px;
@@ -333,6 +380,12 @@
       padding: 5px 10px;
       border-radius: 15px;
       font-size: 0.8rem;
+      transition: background-color 0.3s ease, transform 0.3s ease;
+    }
+
+    .project-tag:hover {
+      background-color: rgba(255, 255, 255, 0.2);
+      transform: scale(1.05);
     }
 
     .view-project {
@@ -342,30 +395,81 @@
       padding: 8px 15px;
       border-radius: 5px;
       margin-top: 15px;
-      transition: background-color 0.3s;
+      transition: background-color 0.3s ease, transform 0.3s ease;
     }
 
     .view-project:hover {
       background-color: rgba(255, 255, 255, 0.2);
+      transform: scale(1.05);
     }
 
     .portfolio-footer {
       background-color: #0a0a0a;
       padding: 40px 20px;
+      opacity: 0;
+      transform: translateY(20px);
+      transition: opacity 0.8s ease, transform 0.8s ease;
     }
+
+    .portfolio-footer.animate {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
     .portfolio-footer .contact-info,
 
     .portfolio-footer .contact-info {
       border-bottom: 1px solid rgba(255, 255, 255, 0.1);
     }
 
+    /* Loading screen enhanced styles */
+    .loading-screen {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: #080808;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      z-index: 9999;
+      transition: opacity 0.8s ease;
+    }
+
+    .loading-screen.fade-out {
+      opacity: 0;
+    }
+
+    .loader {
+      width: 40px;
+      height: 40px;
+      border: 4px solid rgba(255, 255, 255, 0.1);
+      border-radius: 50%;
+      border-top: 4px solid #fff;
+      animation: spin 1s linear infinite;
+      position: relative;
+    }
+
+    .loader:before {
+      content: '';
+      position: absolute;
+      top: -10px;
+      left: -10px;
+      right: -10px;
+      bottom: -10px;
+      border-radius: 50%;
+      border: 2px solid transparent;
+      border-top-color: rgba(255, 255, 255, 0.5);
+      animation: spin 1.5s linear infinite reverse;
+    }
 
     @media (max-width: 1200px) {
-      .creative {
+      .thapa-magar {
         font-size: 2.5rem;
       }
 
-      .portfolio {
+      .raunak {
         font-size: 6rem;
       }
 
@@ -402,11 +506,11 @@
     }
 
     @media (max-width: 768px) {
-      .creative {
+      .thapa-magar {
         font-size: 2rem;
       }
 
-      .portfolio {
+      .raunak {
         font-size: 4rem;
       }
 
@@ -431,7 +535,7 @@
   </style>
 </head>
 <body>
-<!-- Loading Screen -->
+<!--Loading animation which fades out on page load, This div is only responsible to show the loading screen when the DOM is loaded-->
 <div class="loading-screen">
   <div class="loader"></div>
 </div>
@@ -459,7 +563,7 @@
       <video autoplay loop muted playsinline>
         <source src="../../../images/about/creative-background.mp4" type="video/mp4">
       </video>
-<!-- video Overlay to make it darker on the left side to make the text more visible-->
+      <!-- video Overlay to make it darker on the left side to make the text more visible-->
       <div class="video-overlay"></div>
     </div>
 
@@ -469,8 +573,8 @@
         <span class="author">AI Agents developer</span>
       </div>
       <div class="title-container">
-        <h1 class="creative">THAPA MAGAR</h1>
-        <h1 class="portfolio">RAUNAK</h1>
+        <h1 class="thapa-magar">THAPA MAGAR</h1>
+        <h1 class="raunak">RAUNAK</h1>
       </div>
       <div class="header-image">
         <div class="image-frame">
@@ -513,7 +617,7 @@
           </div>
         </div>
 
-        <!-- Project 2 -->
+        <!--Hand gesture food ordering system-->
         <div class="project-card">
           <div class="project-image">
             <img src="../../../images/about/project2.png" alt="Hand gesture Food ordering">
@@ -534,10 +638,10 @@
           </div>
         </div>
 
-        <!-- Project 3 -->
+        <!--Collaborative Ai developer-->
         <div class="project-card">
           <div class="project-image">
-            <img src="../../../images/about/project3.png" alt="Data Visualization">
+            <img src="../../../images/about/project3.png" alt="Ai developer">
             <div class="project-overlay">
               <a href="https://github.com/R4unak-t4/Leroy-AI-MERN-AI-" target="_blank">
                 <div class="view-project">View Details</div>
@@ -632,46 +736,70 @@
 <script>
   // Loading screen functionality
   window.addEventListener('load', function() {
-    const loadingScreen = document.querySelector('.loading-screen');
+    var loadingScreen = document.querySelector('.loading-screen');
     loadingScreen.classList.add('fade-out');
 
     setTimeout(function() {
       loadingScreen.style.display = 'none';
     }, 800);
+
+    //calling the animation function once the loading is done
+    animateOnScroll();
   });
 
-  // Ensure video plays automatically
-  document.addEventListener('DOMContentLoaded', function() {
-    const video = document.querySelector('video');
+  //Scroll animation function
+  function animateOnScroll() {
+    var sections = document.querySelectorAll('.about-section, .projects-section, .experience-section, .skills-section, .portfolio-footer');
+    var experienceItems = document.querySelectorAll('.experience-item');
+    var projectCards = document.querySelectorAll('.project-card');
+    var skills = document.querySelectorAll('.skill');
 
-    // Force play if autoplay doesn't work
-    video.play().catch(function(error) {
-      console.log("Autoplay prevented:", error);
+    //Animate the sections that are in current view
+    sections.forEach(function(section) {
+      var sectionTop = section.getBoundingClientRect().top;
+      var windowHeight = window.innerHeight;
 
-      // Add a play button if autoplay is blocked
-      if (error.name === "NotAllowedError") {
-        const playButton = document.createElement('button');
-        playButton.textContent = "Play Video";
-        playButton.style.position = "absolute";
-        playButton.style.zIndex = "3";
-        playButton.style.top = "50%";
-        playButton.style.left = "50%";
-        playButton.style.transform = "translate(-50%, -50%)";
-        playButton.style.padding = "10px 20px";
-        playButton.style.backgroundColor = "#fff";
-        playButton.style.border = "none";
-        playButton.style.borderRadius = "4px";
-        playButton.style.cursor = "pointer";
+      if (sectionTop <windowHeight*0.85) {
+        section.classList.add('animate');
 
-        playButton.addEventListener('click', function() {
-          video.play();
-          this.remove();
-        });
-
-        document.querySelector('.video-background').appendChild(playButton);
+        // If it's the skills section, animate each skill with delay
+        if (section.classList.contains('skills-section') && section.classList.contains('animate')) {
+          skills.forEach(function(skill, index) {
+            setTimeout(function() {
+              skill.classList.add('animate');
+            }, 100 * index);
+          });
+        }
       }
     });
-  });
+
+    //Animate experience items with delay
+    experienceItems.forEach(function(item, index) {
+      var itemTop = item.getBoundingClientRect().top;
+      var windowHeight = window.innerHeight;
+
+      if (itemTop < windowHeight * 0.85) {
+        setTimeout(function() {
+          item.classList.add('animate');
+        }, 200*index);
+      }
+    });
+
+    //Animate project cards with delay
+    projectCards.forEach(function(card, index) {
+      var cardTop = card.getBoundingClientRect().top;
+      var windowHeight = window.innerHeight;
+
+      if (cardTop < windowHeight * 0.85) {
+        setTimeout(function() {
+          card.classList.add('animate');
+        },200 *index);
+      }
+    });
+  }
+
+  //when scroll is performed continuously call the animation function
+  window.addEventListener('scroll', animateOnScroll);
 </script>
 </body>
 </html>

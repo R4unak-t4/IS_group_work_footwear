@@ -1,19 +1,22 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <!--Meta tags for SEO and browser compatibility, also for responsive layouts according to the viewport of device-->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="Leroy">
+    <meta name="description" content="The products collection of leroy store">
     <title>Product Detail - Leroy</title>
     <link rel="stylesheet" href="../../css/style.css">
     <link rel="stylesheet" href="../../css/products/product-detail.css">
 </head>
 <body>
 
-<!-- Loading Screen -->
+<!-- Loading Screen division-->
 <div class="loading-screen">
     <div class="loader"></div>
 </div>
-
+<!--navigation bar-->
 <header>
     <div>LEROY</div>
     <nav>
@@ -30,15 +33,16 @@
 
 <main class="product-container">
     <div class="product-gallery">
+<!--        main image of the product-->
         <div class="main-image">
             <img src="../../images/shoes/shoe2.png" alt="Air Zoom Runner - Black/Red" id="main-product-image">
         </div>
     </div>
-
+<!--    div for product details-->
     <div class="product-details">
         <div class="product-category">Nike Jordan 1s</div>
         <h1 class="product-title">Classic Dunk</h1>
-
+<!--    rating info div-->
         <div class="product-rating">
             <div class="stars">
                 <span class="star-count">4.7</span>
@@ -52,17 +56,17 @@
                 <span class="review-count">(128 Reviews)</span>
             </div>
         </div>
-
+<!-- pricing of the product        -->
         <div class="product-price">
             <span class="original-price">RS.7800.00</span>
             <span class="current-price">RS.6499.99</span>
             <span class="discount-badge">-17%</span>
         </div>
-
+<!-- product description-->
         <div class="product-description">
             <p>Experience unparalleled comfort and performance with the Air Jordan 1s. Designed for serious runners who demand the best, these shoes feature our revolutionary air cushioning system and responsive foam for maximum energy return on every stride.</p>
         </div>
-
+<!--Color selector-->
         <div class="color-options">
             <h3>Colors</h3>
             <div class="color-selector">
@@ -73,7 +77,7 @@
             </div>
             <span class="selected-color">Black/Red</span>
         </div>
-
+<!-- size selector-->
         <div class="size-options">
             <h3>Select Size</h3>
             <div class="size-selector">
@@ -93,11 +97,13 @@
         </div>
 
         <div class="product-actions">
+<!--            quantity of the shoes divisions-->
             <div class="quantity-selector">
                 <button class="quantity-btn minus">-</button>
                 <input type="number" value="1" min="1" max="10" id="quantity">
                 <button class="quantity-btn plus">+</button>
             </div>
+<!--            add to card button-->
             <button class="add-to-cart-btn">Add to Cart</button>
             <button class="wishlist-btn">
                 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path></svg>
@@ -107,7 +113,7 @@
         <div class="product-meta">
             <div class="meta-item">
                 <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"></path><path d="M12 5v14"></path></svg>
-                <span>Free shipping on orders over $100</span>
+                <span>Free shipping on orders over Rs.1000</span>
             </div>
             <div class="meta-item">
                 <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path><polyline points="9 22 9 12 15 12 15 22"></polyline></svg>
@@ -120,7 +126,7 @@
         </div>
     </div>
 </main>
-
+<!--More descriptions div along with reviews form-->
 <section class="product-info-tabs">
     <div class="tabs">
         <button class="tab-btn active" data-tab="specifications">Specifications</button>
@@ -213,7 +219,7 @@
                 </div>
                 <button class="write-review-btn">Write a Review</button>
             </div>
-
+<!--    review form container-->
             <div class="review-form-container" id="review-form">
                 <h3>Write Your Review</h3>
                 <form id="new-review-form">
@@ -257,14 +263,13 @@
                     </div>
                 </form>
             </div>
-
+<!--dummy reviews-->
             <div class="reviews-list">
-                <!-- Review 1 -->
                 <div class="review-item">
                     <div class="review-header">
                         <div class="reviewer-info">
                             <div class="reviewer-name">Raunak</div>
-                            <div class="review-date">October 15, 2023</div>
+                            <div class="review-date">October 15, 2025</div>
                         </div>
                         <div class="review-rating">
                             <span class="star filled">★</span>
@@ -281,12 +286,11 @@
                     </div>
                 </div>
 
-                <!-- Review 2 -->
                 <div class="review-item">
                     <div class="review-header">
                         <div class="reviewer-info">
                             <div class="reviewer-name">Siara</div>
-                            <div class="review-date">September 28, 2023</div>
+                            <div class="review-date">September 28, 2025</div>
                         </div>
                         <div class="review-rating">
                             <span class="star filled">★</span>
@@ -301,14 +305,11 @@
                     <div class="review-content">
                         <p>These shoes are fantastic in terms of cushioning and support. The only reason I'm giving 4 stars instead of 5 is that they run a bit narrow in the toe box. I had to go up half a size to get a comfortable fit. Once I did that, they've been perfect for my daily 5k runs.</p>
                     </div>
-                </div>
-
-                <!-- Review 3 -->
-                <div class="review-item">
+                </div><div class="review-item">
                     <div class="review-header">
                         <div class="reviewer-info">
                             <div class="reviewer-name">Saarika</div>
-                            <div class="review-date">September 10, 2023</div>
+                            <div class="review-date">September 10, 2025</div>
                         </div>
                         <div class="review-rating">
                             <span class="star filled">★</span>
@@ -323,14 +324,11 @@
                     <div class="review-content">
                         <p>I bought these primarily for gym workouts but have found myself wearing them for casual outings too because they look so good. The cushioning is excellent and they provide good stability during lateral movements. The only minor issue is that the laces tend to come undone easily, but that's a small complaint for an otherwise excellent shoe.</p>
                     </div>
-                </div>
-
-                <!-- Review 4 -->
-                <div class="review-item">
+                </div><div class="review-item">
                     <div class="review-header">
                         <div class="reviewer-info">
                             <div class="reviewer-name">Pappu</div>
-                            <div class="review-date">August 22, 2023</div>
+                            <div class="review-date">August 22, 2024</div>
                         </div>
                         <div class="review-rating">
                             <span class="star filled">★</span>
@@ -350,7 +348,7 @@
         </div>
     </div>
 </section>
-
+<!--sucess message div which comes as overlay only when form is submitted-->
 <div class="review-success-message" id="review-success">
     <div class="success-content">
         <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path><polyline points="22 4 12 14.01 9 11.01"></polyline></svg>

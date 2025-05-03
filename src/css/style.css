@@ -1,9 +1,14 @@
+/*Getting rid of the default margin and providing a lot of fallback fonts in order to
+ensure compatibility across all devices
+and making sure components dont overflow towards the horizontal axis
+*/
 body {
     margin: 0;
-    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-family:'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
     overflow-x: hidden;
 }
 
+/*Getting rid of the default styles of the anchor tag at all states*/
 a:link{
     text-decoration: none;
     color: black;
@@ -23,44 +28,48 @@ a:active{
     color: black;
 }
 
-/* Loading Screen */
+/*This is applied on the loading div which covers the whole screen and comes initially when we load the webpage*/
 .loading-screen {
     position: fixed;
     top: 0;
     left: 0;
-    width: 100%;
+    width:100%;
     height: 100%;
-    background: linear-gradient(-45deg, #f5f5f5, #e0e0e0, #d5d5d5, #f0f0f0);
+    background: linear-gradient(-45deg, #f5f5f5,#e0e0e0, #d5d5d5,#f0f0f0);
+    /*Making sure the gradient loads 4 times it's size*/
     background-size: 400% 400%;
     animation: gradientAnimation 10s ease infinite;
     display: flex;
     justify-content: center;
     align-items: center;
+    /*making sure the loading screen loads at the most top level as the z-index is the highest*/
     z-index: 9999;
     transition: opacity 0.8s ease-out, visibility 0.8s ease-out;
 }
 
+/*this is for the ellipse that rotates when in loading animation*/
 .loader {
     width: 50px;
     height: 50px;
-    border: 5px solid rgba(0, 0, 0, 0.1);
+    border: 5px solid rgba(0,0, 0,0.1);
     border-radius: 50%;
     border-top-color: #333;
     animation: spin 1s ease-in-out infinite;
 }
 
+/*utility class for spinning the loader*/
 @keyframes spin {
     to {
         transform: rotate(360deg);
     }
 }
-
+/*style to make the loader screen fade out once the js function completes*/
 .loading-screen.fade-out {
     opacity: 0;
     visibility: hidden;
 }
 
-/* Sticky header with blur only */
+/*Style for Nav bar with backdrop-blur and on top of every other element except for loader*/
 header {
     height: 60px;
     display: flex;
@@ -72,11 +81,12 @@ header {
     top: 0;
     z-index: 1000;
     backdrop-filter: blur(10px);
+    /*blurring the background of the nav bar*/
     -webkit-backdrop-filter: blur(10px);
     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
     color: #333;
 }
-
+/*styles for nav bar components*/
 header nav ul {
     padding: 0;
     margin: 0;
@@ -95,15 +105,17 @@ header nav ul li:hover {
     color: #666;
 }
 
+/*making a root css variable for radius as it was being used in calc and a lot of times to decrease redundancy*/
 :root {
     --radius: 120px;
 }
-
+/*making sure of the responsiveness nature in large screens*/
 @media (min-width: 1200px) {
     :root {
-        --radius: 260px; /* Large screens */
+        --radius: 260px;
     }
 }
+/*animation for gradient background*/
 @keyframes gradientAnimation {
     0% {
         background-position: 0% 50%;
@@ -115,7 +127,7 @@ header nav ul li:hover {
         background-position: 0% 50%;
     }
 }
-
+/*style for carousel component*/
 .slider {
     width: 100%;
     height: 680px;
@@ -139,22 +151,28 @@ header nav ul li:hover {
     z-index: 5;
 }
 
-.slider .list .item {
+.slider .list .shoe {
+    /*Dynamically calculating the value of the width for each shoe list item to make sure the image
+    width dose not mess up the alignment
+    */
     width: calc(var(--radius) * 2);
     text-align: center;
     transition: transform 0.8s, filter 0.8s, scale 0.8s;
+    /*applying a blur by default to make sure all the elements on the side are displayed with a blur*/
     filter: blur(5px);
     scale: 0.8;
 }
 
-.slider .list .item.active {
+/*making a special active class for the element on the middle to make sure it is not blurred*/
+.slider .list .shoe.active {
     filter: blur(0);
     scale: 1.2;
 }
 
-.slider .list .item img {
+/*utility class to enlarge the shoe when it comes to the middle*/
+.slider .list .shoe img {
     width: 90%;
-    filter: drop-shadow(0 0 20px rgba(0, 0, 0, 0.3));
+    filter: drop-shadow(0 0 20px rgba(0,0, 0,0.3));
     transition: all 0.8s ease;
 }
 
@@ -169,6 +187,10 @@ header nav ul li:hover {
     z-index: 10;
 }
 
+/*the n-th div property target the specific div in order of the divs inside the content div*/
+
+
+/*targets the footwear text*/
 .slider .content div:nth-child(2) {
     font-size: 80px;
     text-transform: uppercase;
@@ -178,7 +200,7 @@ header nav ul li:hover {
     color: #222;
     transition: opacity 0.5s ease, transform 0.5s ease;
 }
-
+/*targets the collection-text*/
 .slider .content div:nth-child(1) {
     text-align: left;
     text-transform: uppercase;
@@ -191,7 +213,7 @@ header nav ul li:hover {
     border: 1px solid #333;
     background: transparent;
     color: #333;
-    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-family:'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
     letter-spacing: 5px;
     border-radius: 20px;
     padding: 10px 20px;
@@ -204,43 +226,45 @@ header nav ul li:hover {
     background-color: rgba(51, 51, 51, 0.1);
 }
 
-/* Text change animation */
+/*class for a fade effect when the text changes*/
 .text-changing .content div {
     opacity: 0;
     transform: translateY(10px);
 }
 
-#prev,
-#next {
+/*class style for the buttons*/
+#prev-arrow,
+#next-arrow {
     position: absolute;
     top: 50%;
     transform: translateY(-50%);
     width: 50px;
     height: 50px;
     border-radius: 50%;
-    background-color: rgba(255, 255, 255, 0.3);
-    border: 1px solid rgba(51, 51, 51, 0.3);
+    background-color: rgba(255, 255,255, 0.3);
+    border: 1px solid rgba(51,51,51,0.3);
     color: #333;
-    font-size: 20px; /* Changed from x-large to 20px */
+    font-size: 20px;
     font-family: monospace;
     cursor: pointer;
     z-index: 15;
     transition: all 0.3s ease;
 }
 
-#prev:hover,
-#next:hover {
-    background-color: rgba(255, 255, 255, 0.5);
+#prev-arrow:hover,
+#next-arrow:hover {
+    background-color: rgba(255,255,255, 0.5);
 }
 
-#prev {
+#prev-arrow {
     left: 20px;
 }
 
-#next {
+#next-arrow {
     right: 20px;
 }
-/* Footer Styles */
+
+/*style for the footer*/
 footer {
     background-color: #f5f5f5;
     padding: 20px 0;

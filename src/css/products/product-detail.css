@@ -1,6 +1,5 @@
-/* Product Detail Page Styles */
 
-/* Main Product Container */
+/*this is the main container for our product details, keeping everything organized with flexbox*/
 .product-container {
     display: flex;
     flex-wrap: wrap;
@@ -14,13 +13,11 @@
     flex: 1;
     min-width: 300px;
 }
-
 .product-details {
     flex: 1;
     min-width: 300px;
 }
-
-/* Product Gallery */
+/* making the main product image look nice with a subtle hover effect*/
 .main-image {
     width: 100%;
     margin-bottom: 20px;
@@ -40,8 +37,7 @@
     transform: scale(1.02);
 }
 
-
-/* Product Details */
+/* all the product info styling keeping fonts consistent and spacing clean */
 .product-category {
     text-transform: uppercase;
     font-size: 14px;
@@ -84,6 +80,7 @@
     color: #f8c51c;
 }
 
+/*this creates the half-star effect for more accurate ratings*/
 .star.half-filled {
     position: relative;
     color: #d1d1d1;
@@ -102,6 +99,7 @@
     font-size: 14px;
 }
 
+/*pricing section with original price, discounted price and badge*/
 .product-price {
     display: flex;
     align-items: center;
@@ -136,7 +134,7 @@
     color: #555;
 }
 
-/* Color Options */
+/*color selection with circular buttons and active state indicator*/
 .color-options, .size-options {
     margin-bottom: 25px;
 }
@@ -182,7 +180,7 @@
     color: #666;
 }
 
-/* Size Options */
+/*size selection boxes with active state styles*/
 .size-selector {
     display: flex;
     flex-wrap: wrap;
@@ -221,7 +219,7 @@
     margin-top: 5px;
 }
 
-/* Product Actions */
+/*add to cart section with quantity selector and buttons*/
 .product-actions {
     display: flex;
     gap: 15px;
@@ -261,6 +259,7 @@
     -moz-appearance: textfield;
 }
 
+/*removing those spinner arrows from the number input*/
 #quantity::-webkit-outer-spin-button,
 #quantity::-webkit-inner-spin-button {
     -webkit-appearance: none;
@@ -300,7 +299,7 @@
     background-color: #f5f5f5;
 }
 
-/* Product Meta */
+/*product meta info like SKU, categories etc*/
 .product-meta {
     border-top: 1px solid #eee;
     padding-top: 20px;
@@ -315,7 +314,7 @@
     font-size: 14px;
 }
 
-/* Product Info Tabs */
+/*tabs for additional product information specs, features etc */
 .product-info-tabs {
     max-width: 1200px;
     margin: 60px auto 40px;
@@ -364,7 +363,6 @@
     font-weight: 600;
 }
 
-/* Specifications Table */
 .specs-table {
     width: 100%;
     border-collapse: collapse;
@@ -389,7 +387,7 @@
     color: #555;
 }
 
-/* Features List */
+/*product features section styling*/
 .features-list {
     list-style: none;
     padding: 0;
@@ -412,7 +410,7 @@
     line-height: 1.6;
 }
 
-/* Reviews Section */
+/*review section with nice big rating display and user reviews*/
 .reviews-header {
     display: flex;
     flex-wrap: wrap;
@@ -456,7 +454,7 @@
     background-color: #222;
 }
 
-/* Review Form */
+/* review form styles*/
 .review-form-container {
     background-color: #f9f9f9;
     border-radius: 8px;
@@ -551,7 +549,6 @@
     background-color: #222;
 }
 
-/* Reviews List */
 .reviews-list {
     margin-top: 30px;
 }
@@ -601,7 +598,7 @@
     color: #555;
 }
 
-/* Review Success Message */
+/*success message popup for review submission after a valid submission is made*/
 .review-success-message {
     position: fixed;
     top: 0;
@@ -662,21 +659,6 @@
     background-color: #222;
 }
 
-/* Product Detail Styles */
-.product-detail {
-    display: flex;
-    flex-wrap: wrap;
-    max-width: 1200px;
-    margin: 40px auto;
-    padding: 0 20px;
-    gap: 40px;
-}
-
-.product-images {
-    flex: 1;
-    min-width: 300px;
-}
-
 .product-images > img {
     width: 100%;
     height: auto;
@@ -684,31 +666,6 @@
     margin-bottom: 20px;
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
 }
-
-.thumbnail-images {
-    display: flex;
-    gap: 10px;
-}
-
-.thumbnail-images img {
-    width: 80px;
-    height: 80px;
-    object-fit: cover;
-    border-radius: 4px;
-    cursor: pointer;
-    transition: all 0.2s ease;
-}
-
-.thumbnail-images img:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-}
-
-.product-info {
-    flex: 1;
-    min-width: 300px;
-}
-
 .product-info h1 {
     margin: 0 0 15px 0;
     font-size: 32px;
@@ -768,10 +725,6 @@
     color: #555;
 }
 
-.product-options {
-    margin-bottom: 25px;
-}
-
 .size-options, .color-options {
     margin-bottom: 15px;
 }
@@ -789,81 +742,9 @@
     width: 100px;
 }
 
-.colors {
-    display: flex;
-    gap: 10px;
-}
-
-.color {
-    width: 30px;
-    height: 30px;
-    border-radius: 50%;
-    cursor: pointer;
-    position: relative;
-}
-
-.color.blue {
-    background-color: #1a73e8;
-}
-
-.color.red {
-    background-color: #e53935;
-}
-
-.color.black {
-    background-color: #000;
-}
-
-.color.active::after {
-    content: "";
-    position: absolute;
-    top: -4px;
-    left: -4px;
-    right: -4px;
-    bottom: -4px;
-    border: 2px solid #333;
-    border-radius: 50%;
-}
-
 .product-actions {
     display: flex;
     gap: 15px;
-}
-
-.add-to-cart, .add-to-wishlist {
-    padding: 12px 24px;
-    border-radius: 4px;
-    font-weight: 500;
-    cursor: pointer;
-    transition: all 0.2s ease;
-}
-
-.add-to-cart {
-    background-color: #333;
-    color: white;
-    border: none;
-    flex: 1;
-}
-
-.add-to-cart:hover {
-    background-color: #222;
-}
-
-.add-to-wishlist {
-    background: none;
-    border: 1px solid #ddd;
-    color: #333;
-}
-
-.add-to-wishlist:hover {
-    background-color: #f5f5f5;
-}
-
-/* Product Reviews */
-.product-reviews {
-    max-width: 1200px;
-    margin: 60px auto;
-    padding: 0 20px;
 }
 
 .product-reviews h2 {
@@ -872,7 +753,7 @@
     font-weight: 600;
 }
 
-/* Responsive Styles */
+/*responsive for mobiles*/
 @media (max-width: 768px) {
     .product-container, .product-detail {
         flex-direction: column;

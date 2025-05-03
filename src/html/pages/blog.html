@@ -1,31 +1,31 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
+<head><!--Meta tags for SEO and browser compatibility, also for responsive layouts according to the viewport of device-->
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="author" content="Leroy">
+  <meta name="description" content="See how the tech in the footwear industry is changing production">
   <title>Tech & Footwear Blog - Team Portfolio</title>
   <link rel="stylesheet" href="../../css/style.css">
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800&display=swap">
   <style>
-    /* Blog page specific styles */
     .blog-container {
       max-width: 1200px;
       margin: 100px auto 50px;
       padding: 0 20px;
     }
-
+    /*style for title of the blog*/
     .blog-header {
       text-align: center;
       margin-bottom: 60px;
     }
 
     .blog-title {
-      font-size: 3rem;
+      font-size: 48px;
       margin-bottom: 15px;
       position: relative;
       display: inline-block;
     }
-
+    /*creates a short thin dark line centered beneath the blog title*/
     .blog-title::after {
       content: "";
       position: absolute;
@@ -38,7 +38,7 @@
     }
 
     .blog-subtitle {
-      font-size: 1.2rem;
+      font-size: 19px;
       color: #666;
       max-width: 800px;
       margin: 0 auto;
@@ -47,7 +47,9 @@
     /* Modern Gallery Layout */
     .blog-gallery {
       display: grid;
+      /*divides the space of div into 12 equal columns*/
       grid-template-columns: repeat(12, 1fr);
+      /*sets the minimum height of row to 100px*/
       grid-auto-rows: minmax(100px, auto);
       gap: 20px;
       margin-bottom: 60px;
@@ -103,6 +105,7 @@
     }
 
     .gallery-item:hover .gallery-image img {
+      /*increases the size of the image on hover by 5%*/
       transform: scale(1.05);
     }
 
@@ -112,13 +115,13 @@
     }
 
     .blog-content h2 {
-      font-size: 1.8rem;
+      font-size: 29px;
       margin-bottom: 20px;
       color: #333;
     }
 
     .blog-content h3 {
-      font-size: 1.4rem;
+      font-size: 22px;
       margin-bottom: 15px;
       color: #333;
     }
@@ -129,62 +132,15 @@
       color: #555;
     }
 
-    .blog-content blockquote {
-      border-left: 4px solid #333;
-      padding-left: 20px;
-      margin: 30px 0;
-      font-style: italic;
-      color: #666;
-    }
 
-    @media (max-width: 992px) {
-      .blog-gallery {
-        grid-template-columns: repeat(6, 1fr);
-      }
-
-      .gallery-item.featured,
-      .gallery-item.wide,
-      .gallery-item.medium {
-        grid-column: span 6;
-      }
-
-      .gallery-item.narrow {
-        grid-column: span 3;
-      }
-
-      .gallery-item.featured .gallery-image {
-        height: 400px;
-      }
-    }
-
-    @media (max-width: 768px) {
-      .blog-title {
-        font-size: 2.5rem;
-      }
-
-      .blog-gallery {
-        grid-template-columns: 1fr;
-      }
-
-      .gallery-item.featured,
-      .gallery-item.wide,
-      .gallery-item.medium,
-      .gallery-item.narrow {
-        grid-column: span 1;
-      }
-
-      .gallery-item.featured .gallery-image {
-        height: 300px;
-      }
-    }
   </style>
 </head>
 <body>
-<!-- Loading Screen -->
+<!--Loading animation which fades out on page load, This div is only responsible to show the loading screen when the DOM is loaded-->
 <div class="loading-screen">
   <div class="loader"></div>
 </div>
-
+<!--navigation bar-->
 <header>
   <div>LEROY</div>
   <nav>
@@ -199,7 +155,7 @@
   </nav>
 </header>
 
-<!-- Blog Content -->
+<!--divisions for title and sub-title-->
 <div class="blog-container">
   <div class="blog-header">
     <h1 class="blog-title">Tech Revolution in Footwear</h1>
@@ -323,11 +279,10 @@
 <script>
   // Loading screen functionality
   window.addEventListener('load', function() {
-    const loadingScreen = document.querySelector('.loading-screen');
+    var loadingScreen = document.querySelector('.loading-screen');
     loadingScreen.classList.add('fade-out');
-
     setTimeout(function() {
-      loadingScreen.style.display = 'none';
+      loadingScreen.style.display ='none';
     }, 800);
   });
 </script>

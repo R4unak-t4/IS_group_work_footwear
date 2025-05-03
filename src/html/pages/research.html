@@ -1,13 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
+<head><!--Meta tags for SEO and browser compatibility, also for responsive layouts according to the viewport of device-->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="Leroy">
+    <meta name="description" content="Analysis of our design">
     <title>UI Research - Team Portfolio</title>
     <link rel="stylesheet" href="../../css/style.css">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800&display=swap">
     <style>
-        /* Research page specific styles */
         .research-container {
             max-width: 1400px;
             margin: 100px auto 50px;
@@ -20,7 +20,7 @@
         }
 
         .research-title {
-            font-size: 3rem;
+            font-size: 48px;
             margin-bottom: 15px;
             position: relative;
             display: inline-block;
@@ -38,13 +38,12 @@
         }
 
         .research-subtitle {
-            font-size: 1.2rem;
+            font-size: 19.2px;
             color: #666;
             max-width: 800px;
             margin: 0 auto;
         }
 
-        /* Comparison Grid */
         .comparison-container {
             display: grid;
             grid-template-columns: 1fr 1fr;
@@ -61,7 +60,7 @@
         }
 
         .comparison-header h2 {
-            font-size: 1.8rem;
+            font-size: 28.8px;
             color: #333;
             position: relative;
             padding-bottom: 10px;
@@ -85,13 +84,12 @@
 
         .comparison-title {
             text-align: center;
-            font-size: 1.3rem;
+            font-size: 20.8px;
             font-weight: 600;
             margin-bottom: 20px;
             color: #333;
         }
 
-        /* Design Card */
         .design-card {
             position: relative;
             border-radius: 10px;
@@ -147,7 +145,7 @@
         }
 
         .info-section h4 {
-            font-size: 1.1rem;
+            font-size: 17.6px;
             margin-bottom: 8px;
             color: #fff;
             border-bottom: 1px solid rgba(255, 255, 255, 0.3);
@@ -155,35 +153,13 @@
         }
 
         .info-section p {
-            font-size: 0.95rem;
+            font-size: 15.2px;
             line-height: 1.6;
             color: rgba(255, 255, 255, 0.9);
         }
-
-        @media (max-width: 1200px) {
-            .design-image {
-                height: 250px;
-            }
-        }
-
-        @media (max-width: 992px) {
-            .comparison-container {
-                grid-template-columns: 1fr;
-                gap: 50px;
-            }
-
-            .comparison-header {
-                grid-column: span 1;
-            }
-
-            .comparison-side + .comparison-side {
-                margin-top: 30px;
-            }
-        }
-
         @media (max-width: 768px) {
             .research-title {
-                font-size: 2.5rem;
+                font-size: 40px;
             }
 
             .design-info {
@@ -191,23 +167,16 @@
             }
 
             .info-section h4 {
-                font-size: 1rem;
+                font-size: 16px;
             }
 
             .info-section p {
-                font-size: 0.85rem;
-            }
-        }
-
-        @media (max-width: 576px) {
-            .scroll-indicator {
-                display: none;
+                font-size: 13.6px;
             }
         }
     </style>
 </head>
 <body>
-<!-- Loading Screen -->
 <div class="loading-screen">
     <div class="loader"></div>
 </div>
@@ -364,7 +333,6 @@
             </div>
         </div>
 
-        <!-- Right Side -->
         <div class="comparison-side">
             <div class="comparison-title">Translations</div>
 
@@ -415,7 +383,7 @@
 </footer>
 
 <script>
-    // Loading screen functionality
+    // Loading screen functionality using windows object
     window.addEventListener('load', function() {
         const loadingScreen = document.querySelector('.loading-screen');
         loadingScreen.classList.add('fade-out');

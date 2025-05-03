@@ -1,8 +1,10 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
+<head><!--Meta tags for SEO and browser compatibility, also for responsive layouts according to the viewport of device-->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="Leroy">
+    <meta name="description" content="About our leroy store">
     <title>About LEROY - Our Story</title>
     <link rel="stylesheet" href="../../../css/style.css">
     <link rel="stylesheet" href="../../../css/about/about.css">
@@ -46,7 +48,7 @@
     </style>
 </head>
 <body>
-<!-- Loading Screen -->
+
 <div class="loading-screen">
     <div class="loader"></div>
 </div>
@@ -113,7 +115,7 @@
                             <h3>Saiira Gurung</h3>
                             <p class="team-role">Talented and good</p>
                             <p class="team-bio">Talented and good</p>
-                            <a href="saiira.html" class="portfolio-link">View Portfolio</a>
+                            <a href="ShairaMain.html" class="portfolio-link">View Portfolio</a>
                         </div>
                     </div>
 
@@ -156,9 +158,8 @@
 </footer>
 
 <script>
-    // Loading screen functionality
     window.addEventListener('load', function() {
-        const loadingScreen = document.querySelector('.loading-screen');
+        var loadingScreen = document.querySelector('.loading-screen');
         loadingScreen.classList.add('fade-out');
 
         setTimeout(function() {

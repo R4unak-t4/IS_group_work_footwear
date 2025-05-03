@@ -1,5 +1,4 @@
-/* Products Page Styles */
-
+/*container for the products*/
 .products-container {
     max-width: 1200px;
     margin: 0 auto;
@@ -9,18 +8,20 @@
 .products-container h1 {
     text-align: center;
     margin-bottom: 40px;
-    font-size: 2.5rem;
+    font-size: 40px;
     color: #333;
     letter-spacing: 3px;
     text-transform: uppercase;
 }
-
+/* making grids for the products and setting the columns amount to auto to
+compensate for the incoming items with 250px for each card
+*/
 .products-grid {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
     gap: 30px;
 }
-
+/*style for product cards*/
 .product-card {
     background-color: #fff;
     border-radius: 8px;
@@ -29,6 +30,7 @@
     transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
+/*moving the card a bit above when hovered*/
 .product-card:hover {
     transform: translateY(-5px);
     box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
@@ -48,6 +50,7 @@
     transition: transform 0.5s ease, filter 0.5s ease;
 }
 
+/*bluring the image when hovered*/
 .product-card:hover .product-image img {
     transform: scale(1.1);
     filter: blur(3px);
@@ -99,21 +102,15 @@
 
 .product-info h3 {
     margin: 0 0 10px;
-    font-size: 1.2rem;
+    font-size: 19px;
     color: #333;
 }
 
 .price {
     font-weight: bold;
     color: #555;
-    font-size: 1.1rem;
+    font-size: 18px;
     margin: 0;
-}
-
-/* Active nav item */
-header nav ul li.active {
-    color: #666;
-    font-weight: 600;
 }
 
 /* Responsive adjustments */
@@ -128,7 +125,7 @@ header nav ul li.active {
     }
 
     .products-container h1 {
-        font-size: 2rem;
+        font-size: 32px;
     }
 }
 

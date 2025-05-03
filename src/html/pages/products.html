@@ -1,19 +1,21 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
+<head><!--Meta tags for SEO and browser compatibility, also for responsive layouts according to the viewport of device-->
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="author" content="Leroy">
+  <meta name="description" content="The products collection of leroy store">
   <title>Products - Leroy</title>
   <link rel="stylesheet" href="../../css/style.css">
   <link rel="stylesheet" href="../../css/products/products.css">
 </head>
 <body>
 
-<!-- Loading Screen -->
+<!--Loading animation which fades out on page load, This div is only responsible to show the loading screen when the DOM is loaded-->
 <div class="loading-screen">
   <div class="loader"></div>
 </div>
-
+<!--navigation bar-->
 <header>
   <div>LEROY</div>
   <nav>
@@ -29,24 +31,28 @@
 </header>
 
 <main class="products-container">
+<!--  main title for the products section-->
   <h1>Our Collection</h1>
 
+<!--This division consists of the multiple products cards-->
   <div class="products-grid">
-    <!-- Product 1 -->
+<!--    this division consists of the product card with product name and price-->
     <div class="product-card">
+<!--      container for the product image-->
       <div class="product-image">
         <img src="../../images/shoes/shoe1.png" alt="Urban Runner">
         <div class="overlay">
+<!--          see more button when hovered-->
           <button class="see-more-btn"><a href="product-detail.html">See More</a></button>
         </div>
       </div>
+<!--      div with product title and price-->
       <div class="product-info">
         <h3>Urban Runner</h3>
         <p class="price">₹4,999</p>
       </div>
     </div>
 
-    <!-- Product 2 -->
     <div class="product-card">
       <div class="product-image">
         <img src="../../images/shoes/shoe2.png" alt="Classic Dunk">
@@ -59,8 +65,6 @@
         <p class="price">₹6,499</p>
       </div>
     </div>
-
-    <!-- Product 3 -->
     <div class="product-card">
       <div class="product-image">
         <img src="../../images/shoes/shoe3.png" alt="Sport Elite">
@@ -74,7 +78,7 @@
       </div>
     </div>
 
-    <!-- Product 4 -->
+
     <div class="product-card">
       <div class="product-image">
         <img src="../../images/shoes/shoe4.png" alt="Street Force">
@@ -87,8 +91,6 @@
         <p class="price">₹3,999</p>
       </div>
     </div>
-
-    <!-- Product 5 -->
     <div class="product-card">
       <div class="product-image">
         <img src="../../images/shoes/shoe5.png" alt="Limited Edition X">
@@ -102,7 +104,6 @@
       </div>
     </div>
 
-    <!-- Product 6 -->
     <div class="product-card">
       <div class="product-image">
         <img src="../../images/shoes/shoe6.png" alt="Limited Edition X">
@@ -116,7 +117,6 @@
       </div>
     </div>
 
-    <!-- Product 7 -->
     <div class="product-card">
       <div class="product-image">
         <img src="../../images/shoes/shoe7.png" alt="Limited Edition X">
@@ -130,7 +130,6 @@
       </div>
     </div>
 
-    <!-- Product 8 -->
     <div class="product-card">
       <div class="product-image">
         <img src="../../images/shoes/shoe8.png" alt="Limited Edition X">
@@ -145,7 +144,7 @@
     </div>
   </div>
 </main>
-
+<!--footer-->
 <footer>
   <div class="footer-content">
     <p>&copy; 2025 LEROY Footwear. All rights reserved.</p>

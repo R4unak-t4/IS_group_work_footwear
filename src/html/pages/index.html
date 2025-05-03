@@ -1,18 +1,24 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
+<head><!--Meta tags for SEO and browser compatibility, also for responsive layouts according to the viewport of device-->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Leroy</title>
+    <meta name="author" content="Leroy">
+    <meta name="description" content="Leroy provides best quality footwear with premium materials">
+
+    <title>Leroy-Home</title>
+
+    <!--Linking the main css file-->
     <link rel="stylesheet" href="../../css/style.css">
 </head>
 <body>
 
-<!-- Loading Screen -->
+<!--Loading animation which fades out on page load, This div is only responsible to show the loading screen when the DOM is loaded-->
 <div class="loading-screen">
     <div class="loader"></div>
 </div>
 
+<!--Nav bar with backdrop blur-->
 <header>
     <div>LEROY</div>
     <nav>
@@ -27,36 +33,43 @@
     </nav>
 </header>
 
+<!--Image slider section with buttons and shoe images, utilizing the carousel components to show the shoes -->
+<!--Each shoe div is a shoe which with parent carousel slider (also parent of list)-->
 <div class="slider">
     <div class="list">
-        <div class="item">
+        <div class="shoe">
             <img src="../../images/shoes/shoe1.png" alt="Shoe 1">
         </div>
-        <div class="item active">
+<!--        Shoe in the middle with special class 'active' to properly give a non-blur style while on display-->
+        <div class="shoe active">
             <img src="../../images/shoes/shoe2.png" alt="Shoe 2">
         </div>
-        <div class="item">
+        <div class="shoe">
             <img src="../../images/shoes/shoe3.png" alt="Shoe 3">
         </div>
-        <div class="item">
+        <div class="shoe">
             <img src="../../images/shoes/shoe4.png" alt="Shoe 4">
         </div>
-        <div class="item">
+        <div class="shoe">
             <img src="../../images/shoes/shoe5.png" alt="Shoe 5">
         </div>
     </div>
 
+    <!--Text for corresponsing shoes which is dynamically changed with js-->
     <div class="content">
         <div id="collection-text">collection</div>
         <div id="footwear-text">footwear</div>
         <a href="products.html"><button>See More</button></a>
     </div>
-    <div class="arow">
-        <button id="prev"><</button>
-        <button id="next">></button>
+
+<!--    Arrow keys that changes the shoe that is in the active view-->
+    <div class="arrow-keys">
+        <button id="prev-arrow"><</button>
+        <button id="next-arrow">></button>
     </div>
 </div>
 
+<!--linking the Javascript at the end of the file to make sure all the html and css is loaded first, also to avoid early js hydration-->
 <script src="../../java-script/main.js"></script>
 </body>
 </html>
