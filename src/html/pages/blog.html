@@ -44,13 +44,10 @@
       margin: 0 auto;
     }
 
-    /* Modern Gallery Layout */
+    /* Modern Gallery Layout with Flexbox */
     .blog-gallery {
-      display: grid;
-      /*divides the space of div into 12 equal columns*/
-      grid-template-columns: repeat(12, 1fr);
-      /*sets the minimum height of row to 100px*/
-      grid-auto-rows: minmax(100px, auto);
+      display: flex;
+      flex-wrap: wrap;
       gap: 20px;
       margin-bottom: 60px;
     }
@@ -69,22 +66,21 @@
     }
 
     .gallery-item.featured {
-      grid-column: span 12;
-      grid-row: span 2;
+      flex: 1 1 100%;
       display: flex;
       flex-direction: column;
     }
 
     .gallery-item.wide {
-      grid-column: span 8;
+      flex: 1 1 calc(66.66% - 10px);
     }
 
     .gallery-item.narrow {
-      grid-column: span 4;
+      flex: 1 1 calc(33.33% - 10px);
     }
 
     .gallery-item.medium {
-      grid-column: span 6;
+      flex: 1 1 calc(50% - 10px);
     }
 
     .gallery-image {
@@ -132,6 +128,31 @@
       color: #555;
     }
 
+    /* Media queries for responsive layout */
+    @media (max-width: 992px) {
+      .gallery-item.wide {
+        flex: 1 1 100%;
+      }
+
+      .gallery-item.narrow {
+        flex: 1 1 calc(50% - 10px);
+      }
+    }
+
+    @media (max-width: 768px) {
+      .blog-title {
+        font-size: 36px;
+      }
+
+      .gallery-item.medium,
+      .gallery-item.narrow {
+        flex: 1 1 100%;
+      }
+
+      .gallery-item.featured .gallery-image {
+        height: 400px;
+      }
+    }
 
   </style>
 </head>
@@ -252,7 +273,7 @@
       </div>
     </div>
 
-<!--Advantages-->
+    <!--Advantages-->
     <div class="gallery-item narrow" style="background-color: #333; color: white;">
       <div class="blog-content">
         <h3 style="color: white; text-align: center; margin-bottom: 20px;">Advantages</h3>

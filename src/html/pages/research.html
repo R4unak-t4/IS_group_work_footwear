@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
-<head><!--Meta tags for SEO and browser compatibility, also for responsive layouts according to the viewport of device-->
+<head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="author" content="Leroy">
@@ -45,14 +45,14 @@
         }
 
         .comparison-container {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
+            display: flex;
+            flex-wrap: wrap;
             gap: 30px;
             margin-bottom: 80px;
         }
 
         .comparison-header {
-            grid-column: span 2;
+            flex: 1 1 100%;
             display: flex;
             justify-content: space-between;
             padding: 0 20px;
@@ -77,9 +77,10 @@
         }
 
         .comparison-side {
-            display: grid;
-            grid-template-columns: 1fr;
-            gap: 30px;
+            flex: 1 1 calc(50% - 15px);
+            display: flex;
+            flex-direction: column;
+            gap: 50px;
         }
 
         .comparison-title {
@@ -90,12 +91,21 @@
             color: #333;
         }
 
+        .image-title {
+            text-align: center;
+            font-size: 18px;
+            font-weight: 500;
+            margin-bottom: 15px;
+            color: #444;
+        }
+
         .design-card {
             position: relative;
             border-radius: 10px;
             overflow: hidden;
             box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
             transition: transform 0.3s, box-shadow 0.3s;
+            cursor: pointer;
         }
 
         .design-card:hover {
@@ -157,6 +167,20 @@
             line-height: 1.6;
             color: rgba(255, 255, 255, 0.9);
         }
+
+        /* Style for the card links */
+        .card-link {
+            text-decoration: none;
+            color: inherit;
+            display: block;
+        }
+
+        @media (max-width: 992px) {
+            .comparison-side {
+                flex: 1 1 100%;
+            }
+        }
+
         @media (max-width: 768px) {
             .research-title {
                 font-size: 40px;
@@ -212,160 +236,184 @@
         <div class="comparison-side">
             <div class="comparison-title">Inspirations</div>
 
-            <div class="design-card">
-                <div class="design-image">
-                    <img src="../../images/research/homepagemercedes.png" alt="Home page of mercedes">
+            <div class="image-title">Mercedes Homepage Design</div>
+            <a href="https://www.mercedes-benz.com/en/" target="_blank" class="card-link">
+                <div class="design-card">
+                    <div class="design-image">
+                        <img src="../../images/research/homepagemercedes.png" alt="Home page of mercedes">
+                    </div>
+                    <div class="design-info">
+                        <div class="info-section">
+                            <h4>Similarities in UI</h4>
+                            <p>A carousel design and minimalistic approach for landing page</p>
+                        </div>
+                        <div class="info-section">
+                            <h4>Unique Function</h4>
+                            <p>A changing carousel hero image which can be navigated through arrows</p>
+                        </div>
+                        <div class="info-section">
+                            <h4>Design Inspiration in Components</h4>
+                            <p>minimalistic nav bar and backdrop blur</p>
+                        </div>
+                    </div>
                 </div>
-                <div class="design-info">
-                    <div class="info-section">
-                        <h4>Similarities in UI</h4>
-                        <p>A carousel design and minimalistic approach for landing page</p>
-                    </div>
-                    <div class="info-section">
-                        <h4>Unique Function</h4>
-                        <p>A changing carousel hero image which can be navigated through arrows</p>
-                    </div>
-                    <div class="info-section">
-                        <h4>Design Inspiration in Components</h4>
-                        <p>minimalistic nav bar and backdrop blur</p>
-                    </div>
-                </div>
-            </div>
+            </a>
 
-            <div class="design-card">
-                <div class="design-image">
-                    <img src="../../images/research/bloginspiration.png" alt="Inspiration blog page">
+            <div class="image-title">Observer Blog page</div>
+            <a href="https://observer.com/" target="_blank" class="card-link">
+                <div class="design-card">
+                    <div class="design-image">
+                        <img src="../../images/research/bloginspiration.png" alt="Inspiration blog page">
+                    </div>
+                    <div class="design-info">
+                        <div class="info-section">
+                            <h4>Similarities in UI</h4>
+                            <p>Layout of the articles and sub-sections</p>
+                        </div>
+                        <div class="info-section">
+                            <h4>Unique Function</h4>
+                            <p>Equally distributed divisions across the page with some gap</p>
+                        </div>
+                        <div class="info-section">
+                            <h4>Design Inspiration in Components</h4>
+                            <p>Using flex to display a uniquely organized UI boxes for images and topics</p>
+                        </div>
+                    </div>
                 </div>
-                <div class="design-info">
-                    <div class="info-section">
-                        <h4>Similarities in UI</h4>
-                        <p>Layout of the articles and sub-sections</p>
-                    </div>
-                    <div class="info-section">
-                        <h4>Unique Function</h4>
-                        <p>Equally distributed divisions across the page with some gap</p>
-                    </div>
-                    <div class="info-section">
-                        <h4>Design Inspiration in Components</h4>
-                        <p>Using flex to display a uniquely organized UI boxes for images and topics</p>
-                    </div>
-                </div>
-            </div>
+            </a>
 
-            <div class="design-card">
-                <div class="design-image">
-                    <img src="../../images/research/productsinspiration.png" alt="Nike products page">
+            <div class="image-title">Nike Products Grid</div>
+            <a href="https://www.nike.com/men" target="_blank" class="card-link">
+                <div class="design-card">
+                    <div class="design-image">
+                        <img src="../../images/research/productsinspiration.png" alt="Nike products page">
+                    </div>
+                    <div class="design-info">
+                        <div class="info-section">
+                            <h4>Similarities in UI</h4>
+                            <p>minimalistic approach to meta-data of the product</p>
+                        </div>
+                        <div class="info-section">
+                            <h4>Unique Function</h4>
+                            <p>A hover animation triggered when on product</p>
+                        </div>
+                        <div class="info-section">
+                            <h4>Design Inspiration in Components</h4>
+                            <p>layout of the products</p>
+                        </div>
+                    </div>
                 </div>
-                <div class="design-info">
-                    <div class="info-section">
-                        <h4>Similarities in UI</h4>
-                        <p>minimalistic approach to meta-data of the product</p>
-                    </div>
-                    <div class="info-section">
-                        <h4>Unique Function</h4>
-                        <p>A hover animation triggered when on product</p>
-                    </div>
-                    <div class="info-section">
-                        <h4>Design Inspiration in Components</h4>
-                        <p>layout of the products</p>
-                    </div>
-                </div>
-            </div>
+            </a>
 
-            <div class="design-card">
-                <div class="design-image">
-                    <img src="../../images/research/nikeproductdetail.png" alt="Nike products details page">
+            <div class="image-title">Nike's Product Detail Page</div>
+            <a href="https://www.nike.com/t/air-jordan-1-retro-high-og-unc-reimagined-mens-shoes-JHpxkn/DZ5485-402" target="_blank" class="card-link">
+                <div class="design-card">
+                    <div class="design-image">
+                        <img src="../../images/research/nikeproductdetail.png" alt="Nike products details page">
+                    </div>
+                    <div class="design-info">
+                        <div class="info-section">
+                            <h4>Similarities in UI</h4>
+                            <p>layout for the main image and buttons</p>
+                        </div>
+                        <div class="info-section">
+                            <h4>Unique Function</h4>
+                            <p>Buyer can set the amount of shoes to be ordered</p>
+                        </div>
+                        <div class="info-section">
+                            <h4>Design Inspiration in Components</h4>
+                            <p>Layout for the options for the shoes</p>
+                        </div>
+                    </div>
                 </div>
-                <div class="design-info">
-                    <div class="info-section">
-                        <h4>Similarities in UI</h4>
-                        <p>layout for the main image and buttons</p>
-                    </div>
-                    <div class="info-section">
-                        <h4>Unique Function</h4>
-                        <p>Buyer can set the amount of shoes to be ordered</p>
-                    </div>
-                    <div class="info-section">
-                        <h4>Design Inspiration in Components</h4>
-                        <p>Layout for the options for the shoes</p>
-                    </div>
-                </div>
-            </div>
+            </a>
 
-            <div class="design-card">
-                <div class="design-image">
-                    <img src="../../images/research/nike-about.png" alt="Nike about section">
+            <div class="image-title">Nike's About page</div>
+            <a href="https://about.nike.com/en/" target="_blank" class="card-link">
+                <div class="design-card">
+                    <div class="design-image">
+                        <img src="../../images/research/nike-about.png" alt="Nike about section">
+                    </div>
+                    <div class="design-info">
+                        <div class="info-section">
+                            <h4>Similarities in UI</h4>
+                            <p>Layout for the cards</p>
+                        </div>
+                        <div class="info-section">
+                            <h4>Unique Function</h4>
+                            <p>Button to view particular portfolio</p>
+                        </div>
+                        <div class="info-section">
+                            <h4>Design Inspiration in Components</h4>
+                            <p>Card design and layout of texts</p>
+                        </div>
+                    </div>
                 </div>
-                <div class="design-info">
-                    <div class="info-section">
-                        <h4>Similarities in UI</h4>
-                        <p>Layout for the cards</p>
-                    </div>
-                    <div class="info-section">
-                        <h4>Unique Function</h4>
-                        <p>Button to view particular portfolio</p>
-                    </div>
-                    <div class="info-section">
-                        <h4>Design Inspiration in Components</h4>
-                        <p>Card design and layout of texts</p>
-                    </div>
-                </div>
-            </div>
+            </a>
 
-            <div class="design-card">
-                <div class="design-image">
-                    <img src="../../images/research/keysmart-contact.png" alt="Keysmart contact us">
+            <div class="image-title">Keysmart's Contact Form Layout</div>
+            <a href="https://www.getkeysmart.com/pages/contact-us?srsltid=AfmBOoqrATN8MzleS_8tr7vveJL-gPxDOd-rRVmeSIrFo618toZhRIy8" target="_blank" class="card-link">
+                <div class="design-card">
+                    <div class="design-image">
+                        <img src="../../images/research/keysmart-contact.png" alt="Keysmart contact us">
+                    </div>
+                    <div class="design-info">
+                        <div class="info-section">
+                            <h4>Similarities in UI</h4>
+                            <p>Layout and text for the form</p>
+                        </div>
+                        <div class="info-section">
+                            <h4>Unique Function</h4>
+                            <p>Form fields and validations</p>
+                        </div>
+                        <div class="info-section">
+                            <h4>Design Inspiration in Components</h4>
+                            <p>Texts and layouts of the elements</p>
+                        </div>
+                    </div>
                 </div>
-                <div class="design-info">
-                    <div class="info-section">
-                        <h4>Similarities in UI</h4>
-                        <p>Layout and text for the form</p>
-                    </div>
-                    <div class="info-section">
-                        <h4>Unique Function</h4>
-                        <p>Form fields and validations</p>
-                    </div>
-                    <div class="info-section">
-                        <h4>Design Inspiration in Components</h4>
-                        <p>Texts and layouts of the elements</p>
-                    </div>
-                </div>
-            </div>
+            </a>
         </div>
 
         <div class="comparison-side">
             <div class="comparison-title">Translations</div>
 
+            <div class="image-title">Our Homepage</div>
             <div class="design-card">
                 <div class="design-image">
                     <img src="../../images/research/ourpageHome.png" alt="Analytics Dashboard 1">
                 </div>
             </div>
 
+            <div class="image-title">Our Blog Page</div>
             <div class="design-card">
                 <div class="design-image">
                     <img src="../../images/research/leroyblogpage.png" alt="Our Blog page">
                 </div>
             </div>
 
+            <div class="image-title">Our Products Collection</div>
             <div class="design-card">
                 <div class="design-image">
                     <img src="../../images/research/leroy-collections.png" alt="Our products">
                 </div>
             </div>
 
+            <div class="image-title">Our Product Detail Page</div>
             <div class="design-card">
                 <div class="design-image">
                     <img src="../../images/research/leroyproducts-detail.png" alt="Our products detail page">
                 </div>
             </div>
 
+            <div class="image-title">Our Team Section</div>
             <div class="design-card">
                 <div class="design-image">
                     <img src="../../images/research/about-section-leroy.png" alt="Analytics Dashboard 5">
                 </div>
             </div>
 
+            <div class="image-title">Our Contact Page</div>
             <div class="design-card">
                 <div class="design-image">
                     <img src="../../images/research/contact-leroy.png" alt="Our contact page">

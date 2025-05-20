@@ -54,7 +54,6 @@
     }
 
     .date-author {
-      /*position of absolute because the texts are loaded above the video*/
       position: absolute;
       top: 40px;
       right: 40px;
@@ -70,7 +69,7 @@
       display: block;
       margin-bottom: 5px;
     }
-    /*style for title wrapper which is also my name*/
+
     .title-container {
       flex: 1;
       padding-right: 40px;
@@ -293,11 +292,12 @@
       box-shadow: 0 5px 15px rgba(255, 255, 255, 0.1);
     }
 
-    /* Projects Section */
+    /* Projects Section - Converted from grid to flex */
     .projects-grid {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 30px;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      margin: -15px;
     }
 
     .project-card {
@@ -307,6 +307,8 @@
       transition: transform 0.5s ease, box-shadow 0.5s ease;
       opacity: 0;
       transform: translateY(30px);
+      width: calc(33.333% - 30px);
+      margin: 15px;
     }
 
     .project-card.animate {
@@ -500,8 +502,9 @@
         height: 250px;
       }
 
-      .projects-grid {
-        grid-template-columns: repeat(2, 1fr);
+      /* Updated for flex */
+      .project-card {
+        width: calc(50% - 30px);
       }
     }
 
@@ -528,8 +531,10 @@
         height: 200px;
       }
 
-      .projects-grid {
-        grid-template-columns: 1fr;
+      /* Updated for flex */
+      .project-card {
+        width: 100%;
+        margin: 15px 0;
       }
     }
   </style>
@@ -741,7 +746,7 @@
 
     setTimeout(function() {
       loadingScreen.style.display = 'none';
-    }, 800);
+    }, 1500);
 
     //calling the animation function once the loading is done
     animateOnScroll();

@@ -1,6 +1,6 @@
 document.addEventListener('DOMContentLoaded', function() {
     //Loading screen animation more explanation on main.js
-    setTimeout(() => {
+    setTimeout(function() {
         var loadingScreen = document.querySelector('.loading-screen');
         if (loadingScreen) {
             loadingScreen.classList.add('fade-out');
@@ -27,7 +27,7 @@ document.addEventListener('DOMContentLoaded', function() {
     function validateField(field) {
         var fieldName = field.getAttribute('name');
         var errorElement = document.getElementById(`${fieldName}-error`);
-        if (field.hasAttribute('required') && field.value.trim() === '') {
+        if (field.value.trim() === '') {
             field.classList.add('error');
             errorElement.textContent = 'This field is required';
             return false;
