@@ -18,12 +18,17 @@ document.addEventListener('DOMContentLoaded', function() {
                 // Remove active class from all color options which is not selected
                 colorOptions.forEach(opt => opt.classList.remove('active'));
 
-                // Add activ class to the clicked option of the color
+                // Add active class to the clicked option of the color
                 e.currentTarget.classList.add('active');
-
                 //Update the displayed selected color name
                 var colorName = e.currentTarget.getAttribute('data-color');
                 selectedColorText.textContent = colorName;
+                //test for color selected
+                var activeColor = document.querySelector('.color-option.active');
+                if (activeColor) {
+                    var colorActive = activeColor.getAttribute('data-color');
+                    console.log(colorActive + "selected as color")
+                }
             });
         });
     }
@@ -36,9 +41,14 @@ document.addEventListener('DOMContentLoaded', function() {
             option.addEventListener('click', function(e) {
                 // Remove active class from all sizes
                 sizeOptions.forEach(opt => opt.classList.remove('active'));
-
                 // Mark clicked size as active
                 e.currentTarget.classList.add('active');
+                //test for size selection
+                var activeSize = document.querySelector('.size-option.active');
+                if (activeSize) {
+                    var size = activeSize.textContent;
+                    console.log(size + " selected for size");
+                }
             });
         });
     }
@@ -55,6 +65,9 @@ document.addEventListener('DOMContentLoaded', function() {
             if (currentValue > 1) {
                 quantityInput.value = currentValue - 1;
             }
+            //test for quantity
+            var quantity = document.getElementById('quantity').value;
+            console.log("Current quantity selected "+quantity);
         });
         // same logic for increment
         plusBtn.addEventListener('click', function() {
@@ -62,6 +75,9 @@ document.addEventListener('DOMContentLoaded', function() {
             if (currentValue < 10) {
                 quantityInput.value = currentValue + 1;
             }
+            //test for quantity
+            var quantity = document.getElementById('quantity').value;
+            console.log("Current quantity selected "+quantity);
         });
     }
 

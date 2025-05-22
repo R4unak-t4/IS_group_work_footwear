@@ -65,6 +65,9 @@ function updateText(index) {
     setTimeout(() => {
         collectionText.textContent = shoeContent[index].collection;
         footwearText.textContent = shoeContent[index].footwear;
+        if (index > 0){
+            console.log(`Text changed from ${shoeContent[index - 1].footwear} to ${shoeContent[index].footwear}`)
+        }
 
         // Remove class to trigger fade in animation
         slider.classList.remove('text-changing');
@@ -75,6 +78,13 @@ function runCarousel() {
     // hidding the prev and next button when on the edge of the array index i.e 0 or last index
     prev.style.display = (active === 0) ? 'none' : 'block';
     next.style.display = (active === count - 1) ? 'none' : 'block';
+    if (next.style.display === 'none' && active === count - 1){
+        console.log("The button was hidden perfectly");
+    }else{
+        if (active === count - 1){
+            console.log("The arrow button for next shoe is still visible on the last shoe");
+        }
+    }
 
     var old_active = document.querySelector('.shoe.active');
     // removing the active class from the previous active shoe
@@ -87,6 +97,24 @@ function runCarousel() {
     // Update text content based on active shoe
     updateText(active);
 }
+const navLinks = document.querySelectorAll("nav ul li a")
+navLinks.forEach((link) => {
+    link.addEventListener("mouseenter", () => {
+        link.style.color = "#666"
+        link.style.transition = "color 0.3s ease"
+        if (link.style.color === "rgb(102, 102, 102)"){
+            console.log("color changed successfully to #666");
+        }else {
+            console.log("color not changed test failed")
+        }
+    })
+
+    link.addEventListener("mouseleave", () => {
+        link.style.color = "black"
+        link.style.transition = "color 0.3s ease"
+    })
+})
+
 // calling the text setup function to have the text shown for the 2nd shoe
 updateText(active);
 

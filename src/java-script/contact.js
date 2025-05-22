@@ -66,13 +66,17 @@ document.addEventListener('DOMContentLoaded', function() {
         });
 
         if (isValid) {
+            console.log("Form validation passed.");
             successMessage.classList.add('show');
-
             contactForm.reset();
+        } else {
+            console.log("Form validation failed.");
         }
     });
 
     closeSuccessBtn.addEventListener('click', function() {
         successMessage.classList.remove('show');
+
     });
 });
+// every field is validated by using the comparison with empty string and test using the regex to return some boolean value and using the gates to ensure every field is validated properly
